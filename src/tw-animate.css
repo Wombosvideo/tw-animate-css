@@ -58,6 +58,9 @@
   --percentage-95: 0.95;
   --percentage-100: 1;
 
+  --animate-accordion-down: accordion-down var(--tw-duration, 200ms) ease-out;
+  --animate-accordion-up: accordion-up var(--tw-duration, 200ms) ease-out;
+
   @keyframes enter {
     from {
       opacity: var(--tw-enter-opacity, 1);
@@ -89,6 +92,24 @@
           var(--tw-exit-scale, 1)
         )
         rotate(var(--tw-exit-rotate, 0));
+    }
+  }
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
     }
   }
 }
