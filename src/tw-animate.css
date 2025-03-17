@@ -58,9 +58,6 @@
   --percentage-95: 0.95;
   --percentage-100: 1;
 
-  --animate-accordion-down: accordion-down var(--tw-duration, 200ms) ease-out;
-  --animate-accordion-up: accordion-up var(--tw-duration, 200ms) ease-out;
-
   @keyframes enter {
     from {
       opacity: var(--tw-enter-opacity, 1);
@@ -94,6 +91,9 @@
         rotate(var(--tw-exit-rotate, 0));
     }
   }
+
+  --animate-accordion-down: accordion-down var(--tw-duration, 200ms) ease-out;
+  --animate-accordion-up: accordion-up var(--tw-duration, 200ms) ease-out;
 
   @keyframes accordion-down {
     from {
