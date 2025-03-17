@@ -100,13 +100,13 @@
       height: 0;
     }
     to {
-      height: var(--radix-accordion-content-height);
+      height: var(--radix-accordion-content-height, --bits-accordion-content-height);
     }
   }
 
   @keyframes accordion-up {
     from {
-      height: var(--radix-accordion-content-height);
+      height: var(--radix-accordion-content-height, --bits-accordion-content-height);
     }
     to {
       height: 0;
