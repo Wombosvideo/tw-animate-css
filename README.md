@@ -354,8 +354,6 @@ Set the ending translate of an animation using the `slide-out-to-{direction}-{am
 
 Learn more in the [exit animation translate](/docs/exit-animation-translate.md) documentation.
 
----
-
 > [!NOTE]
 > I use very litte of the original library, so it might not be a 100% compatible
 > drop-in replacement. If you notice any inconsistencies, feel free to contribute
