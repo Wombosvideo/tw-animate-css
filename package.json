@@ -3,7 +3,7 @@
   "version": "1.2.2",
   "description": "TailwindCSS v4.0 compatible replacement for `tailwindcss-animate`.",
   "scripts": {
-    "build": "mkdirp dist && cp src/tw-animate.css dist/",
+    "build": "pnpx @tailwindcss/cli -i ./src/tw-animate.css -o ./dist/tw-animate.css -m",
     "format": "prettier --write ."
   },
   "main": "dist/tw-animate.css",
@@ -30,7 +30,6 @@
   },
   "packageManager": "pnpm@10.6.3",
   "devDependencies": {
-    "mkdirp": "^3.0.1",
     "prettier": "^3.5.3"
   }
 }

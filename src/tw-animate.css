@@ -100,13 +100,13 @@
       height: 0;
     }
     to {
-      height: var(--radix-accordion-content-height, --bits-accordion-content-height);
+      height: var(--radix-accordion-content-height, var(--bits-accordion-content-height));
     }
   }
 
   @keyframes accordion-up {
     from {
-      height: var(--radix-accordion-content-height, --bits-accordion-content-height);
+      height: var(--radix-accordion-content-height, var(--bits-accordion-content-height));
     }
     to {
       height: 0;
@@ -200,7 +200,6 @@
   --tw-enter-translate-y: calc(--value(integer) * var(--spacing) * -1);
   --tw-enter-translate-y: calc(--value(--translate-*, [percentage], ratio, [length]) * -1);
 }
-
 @utility slide-in-from-bottom {
   --tw-enter-translate-y: 100%;
 }
