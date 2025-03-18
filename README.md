@@ -8,7 +8,7 @@ A v4.0 compatible Tailwind CSS plugin for creating beautiful animations, replaci
 
 Instead of being an old-fashioned JavaScript plugin, this package provides a CSS file defining custom utilities based on the new [CSS-first architecture](https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities).
 
-## Installation
+## Usage
 
 ### NPM
 
