@@ -8,6 +8,9 @@
   },
   "main": "dist/tw-animate.css",
   "exports": "./dist/tw-animate.css",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "tailwindcss-animate",
     "tailwindcss",
