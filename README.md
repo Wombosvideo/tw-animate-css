@@ -48,7 +48,7 @@ Instead of being an old-fashioned JavaScript plugin, this package provides a CSS
 
 ### Manual download
 
-1. Download the [`tw-animate.css`](https://raw.githubusercontent.com/Wombosvideo/tw-animate-css/refs/heads/main/src/tw-animate.css) file from GitHub and place it next to your `app.css`.
+1. Download the [`tw-animate.css`](https://raw.githubusercontent.com/Wombosvideo/tw-animate-css/refs/heads/main/src/tw-animate.css) file from GitHub and place it next to your `app.css` or `globals.css` file.
 2. Add the following line to your `app.css` or `globals.css` file:
 
    ```diff
@@ -100,6 +100,11 @@ Instead of being an old-fashioned JavaScript plugin, this package provides a CSS
   -    }
   -  }
   ```
+
+> [!NOTE]
+> I use very litte of the original library, so it might not be a 100% compatible
+> drop-in replacement. If you notice any inconsistencies, feel free to contribute
+> to this repository by opening a pull-request.
 
 ## Documentation
 
