@@ -22,14 +22,10 @@
     "translate",
     "zoom"
   ],
-  "homepage": "https://github.com/Wombosvideo/tw-animate-css",
-  "bugs": {
-    "url": "https://github.com/Wombosvideo/tw-animate-css/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Wombosvideo/tw-animate-css.git"
-  },
+  "homepage": "https://github.com/Wombosvideo/tw-animate-css#readme",
+  "bugs": "https://github.com/Wombosvideo/tw-animate-css/issues",
+  "repository": "Wombosvideo/tw-animate-css",
+  "funding": "https://github.com/sponsors/Wombosvideo",
   "license": "MIT",
   "author": {
     "name": "Luca Bosin",
