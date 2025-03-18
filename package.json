@@ -12,9 +12,24 @@
     "dist"
   ],
   "keywords": [
+    "accordion",
+    "animate",
+    "animation",
+    "css",
+    "fades",
+    "opacity",
+    "scale",
+    "shadcn",
+    "slide",
+    "spin",
+    "tailwind-animate",
+    "tailwind",
     "tailwindcss-animate",
     "tailwindcss",
-    "animation"
+    "transform",
+    "transition",
+    "translate",
+    "zoom"
   ],
   "author": {
     "name": "Luca Bosin",
