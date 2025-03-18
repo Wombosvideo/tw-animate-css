@@ -74,7 +74,7 @@ Instead of being an old-fashioned JavaScript plugin, this package provides a CSS
    <!-- And so much more! -->
    ```
 
-### Optional: Reduce Lines of Code
+### Optional: Clean Up Unused Code
 
 - If your project already includes the following lines for shadcn `Accordion` animations, you can remove them from the `global.css` file.
 
