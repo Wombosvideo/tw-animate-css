@@ -50,7 +50,7 @@ Instead of being an old-fashioned JavaScript plugin, this package provides a CSS
 2. Add the following line to your `app.css` or `globals.css` file:
 
    ```css
-   @import "./tw-animate-css.css";
+   @import "./tw-animate.css";
    ```
 
 3. Start using the animations!
