@@ -21,9 +21,9 @@ Instead of being an old-fashioned JavaScript plugin, this package provides a CSS
 2. Add the following line to your `app.css` or `globals.css` file, and remove the `@plugin "tailwindcss-animate"` line if it exists:
 
    ```diff
-   @import "tailwindcss"
-   + @import "tw-animate-css"
-   - @plugin "tailwindcss-animate"
+   @import "tailwindcss";
+   + @import "tw-animate-css";
+   - @plugin "tailwindcss-animate";
    ```
 
 3. Start using the animations!
@@ -50,8 +50,8 @@ Instead of being an old-fashioned JavaScript plugin, this package provides a CSS
 2. Add the following line to your `app.css` or `globals.css` file:
 
    ```diff
-   @import "tailwindcss"
-   + @import "./tw-animate.css"
+   @import "tailwindcss";
+   + @import "./tw-animate.css";
    ```
 
 3. Start using the animations!
