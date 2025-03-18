@@ -38,13 +38,32 @@
   ],
   "scripts": {
     "build": "pnpx @tailwindcss/cli -i ./src/tw-animate.css -o ./dist/tw-animate.css -m",
-    "format": "prettier --write --ignore-unknown ."
+    "format": "prettier --write --ignore-unknown .",
+    "prepare": "if [ \"$NODE_ENV\" != \"production\" ]; then npx simple-git-hooks; fi"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx commitlint --edit $1"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown",
+    "package.json": "sort-package-json"
   },
   "prettier": {
     "printWidth": 100
   },
   "devDependencies": {
-    "prettier": "^3.5.3"
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "simple-git-hooks": "^2.11.1",
+    "sort-package-json": "^3.0.0"
   },
   "packageManager": "pnpm@10.6.3"
 }
