@@ -1,6 +1,6 @@
 # tw-animate-css
 
-A v4.0 compatible Tailwind CSS plugin for creating beautiful animations, replacing [`tailwindcss-animate`](https://github.com/jamiebuilds/tailwindcss-animate). Includes custom animations like `accordion-up` and `accordion-down`, and more!
+A v4.0 compatible Tailwind CSS plugin for creating beautiful animations, replacing [`tailwindcss-animate`](https://github.com/jamiebuilds/tailwindcss-animate). Includes custom animations for shadcn/primitives like `accordion-up` and `accordion-down`, and more!
 
 [![npm](https://img.shields.io/npm/v/tw-animate-css?color=red&logo=npm)](https://www.npmjs.com/package/tw-animate-css)
 [![npm](https://img.shields.io/npm/dt/tw-animate-css?color=red&logo=npm)](https://www.npmjs.com/package/tw-animate-css)
