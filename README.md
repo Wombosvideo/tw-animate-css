@@ -51,7 +51,7 @@ Instead of being an old-fashioned JavaScript plugin, this package provides a CSS
 
    ```diff
    @import "tailwindcss"
-   + @import "./tw-animate.css";
+   + @import "./tw-animate.css"
    ```
 
 3. Start using the animations!
