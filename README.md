@@ -354,7 +354,17 @@ Set the ending translate of an animation using the `slide-out-to-{direction}-{am
 
 Learn more in the [exit animation translate](/docs/exit-animation-translate.md) documentation.
 
+## Contributing
+
 > [!NOTE]
 > I use very litte of the original library, so it might not be a 100% compatible
 > drop-in replacement. If you notice any inconsistencies, feel free to contribute
 > to this repository by opening a pull-request.
+
+1. Fork the repository.
+2. Clone the forked repository to your local machine.
+3. Create a new branch for your feature or bug fix.
+4. Make your changes.
+5. Try to test your changes with a new project.
+6. Commit and push your changes.
+7. Open a pull-request.
