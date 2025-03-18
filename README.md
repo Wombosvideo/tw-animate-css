@@ -76,7 +76,7 @@ Instead of being an old-fashioned JavaScript plugin, this package provides a CSS
 
 ### Optional: Reduce Lines of Code
 
-- If your project already includes the following lines for `accordion-up` and `accordion-down`, you can remove them from the `global.css` file:
+- If your project already includes the following lines for shadcn `Accordion` animations, you can remove them from the `global.css` file.
 
   ```diff
   -  --animate-accordion-down: accordion-down 0.2s ease-out;
@@ -100,11 +100,6 @@ Instead of being an old-fashioned JavaScript plugin, this package provides a CSS
   -    }
   -  }
   ```
-
-> [!NOTE]
-> I use very litte of the original library, so it might not be a 100% compatible
-> drop-in replacement. If you notice any inconsistencies, feel free to contribute
-> to this repository by opening a pull-request.
 
 ## Documentation
 
@@ -358,3 +353,10 @@ Set the ending translate of an animation using the `slide-out-to-{direction}-{am
 ```
 
 Learn more in the [exit animation translate](/docs/exit-animation-translate.md) documentation.
+
+---
+
+> [!NOTE]
+> I use very litte of the original library, so it might not be a 100% compatible
+> drop-in replacement. If you notice any inconsistencies, feel free to contribute
+> to this repository by opening a pull-request.
