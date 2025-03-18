@@ -1,131 +1,74 @@
-# tw-animate-css
+# `tailwindcss-animate`
 
-A v4.0 compatible Tailwind CSS plugin for creating beautiful animations, replacing [`tailwindcss-animate`](https://github.com/jamiebuilds/tailwindcss-animate). Includes custom animations like `accordion-up` and `accordion-down`, and more!
+> 一个用于构建精美动画的Tailwind CSS插件
 
-[![npm](https://img.shields.io/npm/v/tw-animate-css?color=red&logo=npm)](https://www.npmjs.com/package/tw-animate-css)
-[![npm](https://img.shields.io/npm/dt/tw-animate-css?color=red&logo=npm)](https://www.npmjs.com/package/tw-animate-css)
-[![GitHub](https://img.shields.io/github/stars/nrjdalal/tw-animate-css?color=blue)](https://github.com/Wombosvideo/tw-animate-css)
+```html
+<！-- 添加淡入淡出和缩放出现效果的动画——>
+<div class="animate-in fade-in zoom-in">...</div>
 
-Instead of being an old-fashioned JavaScript plugin, this package provides a CSS file defining custom utilities based on the new [CSS-first architecture](https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities).
+<!-- 添加滑向左上方退出的动画-->
+<div class="animate-out slide-out-to-top slide-out-to-left">...</div>
 
-## Installation
+<!-- 控制动画持续时间 -->
+<div class="... duration-300">...</div>
 
-### NPM
+<!-- 控制动画延迟 -->
+<div class="... delay-150">. 。</div>
 
-1. Install the package with `npm`:
+<!-- 更多其他动画效果！ -->
+```
 
-   ```sh
-   npm install -D tw-animate-css
-   ```
+## 安装
 
-2. Add the following line to your `app.css` or `globals.css` file, and remove the `@plugin "tailwindcss-animate"` line if it exists:
+Install the plugin from npm:
 
-   ```diff
-   @import "tailwindcss"
-   + @import "tw-animate-css"
-   - @plugin "tailwindcss-animate"
-   ```
+```sh
+npm install -D tailwindcss-animate
+```
 
-3. Start using the animations!
+之后将插件添加到您的 `tailwind.config.js` 文件：
 
-   ```html
-   <!-- Add an animated fade and zoom entrance -->
-   <div class="animate-in fade-in zoom-in">...</div>
+```js
+// @filename tailwind.config.js
+module.exports = {
+    theme: {
+        // ...
+    },
+    plugins: [
+        require("tailwindcss-animate"),
+        // ...
+    ],
+}
+```
 
-   <!-- Add an animated slide to top-left exit -->
-   <div class="animate-out slide-out-to-top slide-out-to-left">...</div>
+## 文档
 
-   <!-- Control animation duration -->
-   <div class="... duration-300">...</div>
+- [基本用法](#basic-usage)
+  - [更改动画延迟](#changing-animation-delay)
+  - [更改动画方向](#changing-animation-direction)
+  - [更改动画持续时间](#changing-animation-duration)
+  - [更改动画填充模式](#changing-animation-fill-mode)
+  - [更改动画重复次数](#changing-animation-iteration-count)
+  - [更改动画播放状态](#changing-animation-play-state)
+  - [更改动画时序方式](#changing-animation-timing-function)
+  - [减少动效](#prefers-reduced-motion)
+- [进入以及推出动画](#enter-and-exit-animations)
+  - [添加进入动画](#adding-enter-animations)
+  - [添加退出动画](#adding-exit-animations)
+  - [更改进入动画时的不透明度](#changing-enter-animation-starting-opacity)
+  - [更改进入动画时的旋转](#changing-enter-animation-starting-rotation)
+  - [更改进入动画时的缩放](#changing-enter-animation-starting-scale)
+  - [更改进入动画时的变换](#changing-enter-animation-starting-translate)
+  - [更改退出动画时的不透明度](#changing-exit-animation-ending-opacity)
+  - [更改退出动画时的旋转](#changing-exit-animation-ending-rotation)
+  - [更改退出动画时的缩放](#changing-exit-animation-ending-scale)
+  - [更改退出动画时的变换](#changing-exit-animation-ending-translate)
 
-   <!-- Control animation delay -->
-   <div class="... delay-150">...</div>
+### 基本用法
 
-   <!-- And so much more! -->
-   ```
+#### 更改动画延迟
 
-### Manual download
-
-1. Download the [`tw-animate-css.css`](https://raw.githubusercontent.com/Wombosvideo/tw-animate-css/refs/heads/main/src/tw-animate-css.css) file from GitHub and place it next to your `app.css`.
-2. Add the following line to your `app.css` or `globals.css` file:
-
-   ```css
-   @import "./tw-animate-css.css";
-   ```
-
-3. Start using the animations!
-
-   ```html
-   <!-- Add an animated fade and zoom entrance -->
-   <div class="animate-in fade-in zoom-in">...</div>
-
-   <!-- Add an animated slide to top-left exit -->
-   <div class="animate-out slide-out-to-top slide-out-to-left">...</div>
-
-   <!-- Control animation duration -->
-   <div class="... duration-300">...</div>
-
-   <!-- Control animation delay -->
-   <div class="... delay-150">...</div>
-
-   <!-- And so much more! -->
-   ```
-
-### Optional: Reduce Lines of Code
-
-- If your project already includes the following lines for `accordion-up` and `accordion-down`, you can remove them from the `global.css` file:
-
-  ```diff
-  -  --animate-accordion-down: accordion-down 0.2s ease-out;
-  -  --animate-accordion-up: accordion-up 0.2s ease-out;
-  -
-  -  @keyframes accordion-down {
-  -    from {
-  -      height: 0;
-  -    }
-  -    to {
-  -      height: var(--radix-accordion-content-height);
-  -    }
-  -  }
-  -
-  -  @keyframes accordion-up {
-  -    from {
-  -      height: var(--radix-accordion-content-height);
-  -    }
-  -    to {
-  -      height: 0;
-  -    }
-  -  }
-  ```
-
-## Documentation
-
-- [Basic Usage](#basic-usage)
-  - [Changing animation delay](#changing-animation-delay)
-  - [Changing animation direction](#changing-animation-direction)
-  - [Changing animation duration](#changing-animation-duration)
-  - [Changing animation fill mode](#changing-animation-fill-mode)
-  - [Changing animation iteration count](#changing-animation-iteration-count)
-  - [Changing animation play state](#changing-animation-play-state)
-  - [Changing animation timing function](#changing-animation-timing-function)
-  - [Prefers-reduced-motion](#prefers-reduced-motion)
-- [Enter & Exit Animations](#enter-and-exit-animations)
-  - [Adding enter animations](#adding-enter-animations)
-  - [Adding exit animations](#adding-exit-animations)
-  - [Changing enter animation starting opacity](#changing-enter-animation-starting-opacity)
-  - [Changing enter animation starting rotation](#changing-enter-animation-starting-rotation)
-  - [Changing enter animation starting scale](#changing-enter-animation-starting-scale)
-  - [Changing enter animation starting translate](#changing-enter-animation-starting-translate)
-  - [Changing exit animation ending opacity](#changing-exit-animation-ending-opacity)
-  - [Changing exit animation ending rotation](#changing-exit-animation-ending-rotation)
-  - [Changing exit animation ending scale](#changing-exit-animation-ending-scale)
-  - [Changing exit animation ending translate](#changing-exit-animation-ending-translate)
-
-### Basic Usage
-
-#### Changing animation delay
-
-Use the `delay-{amount}` utilities to control an element’s `animation-delay`.
+使用 `delay-{amount}` 标签控制元素的 `animation-delay`.
 
 ```html
 <button class="animate-bounce delay-150 duration-300 ...">Button A</button>
@@ -133,9 +76,9 @@ Use the `delay-{amount}` utilities to control an element’s `animation-delay`.
 <button class="animate-bounce delay-700 duration-300 ...">Button C</button>
 ```
 
-Learn more in the [animation delay](/docs/animation-delay.md) documentation.
+查看更多与 [animation delay](/docs/animation-delay.md) 相关的文档
 
-#### Changing animation direction
+#### 更改动画方向
 
 Use the `direction-{keyword}` utilities to control an element’s `animation-delay`.
 
@@ -292,9 +235,9 @@ Set the starting translate of an animation using the `slide-in-from-{direction}-
 
 ```html
 <button class="animate-in slide-in-from-top ...">Button A</button>
-<button class="animate-in slide-in-from-bottom-48 ...">Button B</button>
-<button class="animate-in slide-in-from-left-72 ...">Button C</button>
-<button class="animate-in slide-in-from-right-96 ...">Button C</button>
+<button class="animate-in slide-in-from-bottom-50 ...">Button B</button>
+<button class="animate-in slide-in-from-left-75 ...">Button C</button>
+<button class="animate-in slide-in-from-right-95 ...">Button C</button>
 ```
 
 Learn more in the [enter animation translate](/docs/enter-animation-translate.md) documentation.
@@ -344,9 +287,9 @@ Set the ending translate of an animation using the `slide-out-to-{direction}-{am
 
 ```html
 <button class="animate-out slide-out-to-top ...">Button A</button>
-<button class="animate-out slide-out-to-bottom-48 ...">Button B</button>
-<button class="animate-out slide-out-to-left-72 ...">Button C</button>
-<button class="animate-out slide-out-to-right-96 ...">Button C</button>
+<button class="animate-out slide-out-to-bottom-50 ...">Button B</button>
+<button class="animate-out slide-out-to-left-75 ...">Button C</button>
+<button class="animate-out slide-out-to-right-95 ...">Button C</button>
 ```
 
 Learn more in the [exit animation translate](/docs/exit-animation-translate.md) documentation.

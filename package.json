@@ -7,9 +7,7 @@
     "format": "prettier --write ."
   },
   "main": "dist/tw-animate.css",
-  "exports": {
-    ".": "./dist/tw-animate.css"
-  },
+  "exports": "./dist/tw-animate.css",
   "keywords": [
     "tailwindcss-animate",
     "tailwindcss",
