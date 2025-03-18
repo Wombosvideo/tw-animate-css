@@ -21,7 +21,7 @@ Instead of being an old-fashioned JavaScript plugin, this package provides a CSS
 2. Add the following line to your `app.css` or `globals.css` file:
 
    > [!NOTE]  
-   > You can safely remove the `@plugin "tailwindcss-animate";` line if you are using the `tw-animate-css` package.
+   > You can safely remove the `@plugin "tailwindcss-animate";` if you are using the `tw-animate-css` package.
 
    ```diff
    @import "tailwindcss";
