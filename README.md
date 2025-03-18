@@ -222,7 +222,7 @@ For situations where the user has specified that they prefer reduced motion, you
 
 ### Enter & Exit Animations
 
-### Adding enter animations
+#### Adding enter animations
 
 To give an element an enter animation, use the `animate-in` utility, in combination with some [`fade-in`](/docs/enter-animation-scale.md), [`spin-in`](/docs/enter-animation-rotate.md), [`zoom-in`](/docs/enter-animation-scale.md), and [`slide-in-from`](/docs/enter-animation-translate.md) utilities.
 
@@ -236,7 +236,7 @@ To give an element an enter animation, use the `animate-in` utility, in combinat
 
 Learn more in the [enter animation](/docs/enter-animation.md) documentation.
 
-### Adding exit animations
+#### Adding exit animations
 
 To give an element an exit animation, use the `animate-out` utility, in combination with some [`fade-out`](/docs/exit-animation-scale.md), [`spin-out`](/docs/exit-animation-rotate.md), [`zoom-out`](/docs/exit-animation-scale.md), and [`slide-out-from`](/docs/exit-animation-translate.md) utilities.
 
