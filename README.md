@@ -365,6 +365,6 @@ Learn more in the [exit animation translate](/docs/exit-animation-translate.md) 
 2. Clone the forked repository to your local machine.
 3. Create a new branch for your feature or bug fix.
 4. Make your changes.
-5. Try to test your changes with a new project.
+5. Try to test your changes if applicable.
 6. Commit and push your changes.
 7. Open a pull-request.
