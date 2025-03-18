@@ -4,7 +4,7 @@ A v4.0 compatible Tailwind CSS plugin for creating beautiful animations, replaci
 
 [![npm](https://img.shields.io/npm/v/tw-animate-css?color=red&logo=npm)](https://www.npmjs.com/package/tw-animate-css)
 [![npm](https://img.shields.io/npm/dt/tw-animate-css?color=red&logo=npm)](https://www.npmjs.com/package/tw-animate-css)
-[![GitHub](https://img.shields.io/github/stars/nrjdalal/tw-animate-css?color=blue)](https://github.com/Wombosvideo/tw-animate-css)
+[![GitHub](https://img.shields.io/github/stars/Wombosvideo/tw-animate-css?color=blue)](https://github.com/Wombosvideo/tw-animate-css)
 
 Instead of being an old-fashioned JavaScript plugin, this package provides a CSS file defining custom utilities based on the new [CSS-first architecture](https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities).
 
