@@ -30,9 +30,9 @@ Tailwind lets you conditionally apply utility classes in different states using 
 
 ```html
 <div
-    class="animate-bounce duration-300 fill-mode-backwards hover:fill-mode-forwards"
+  class="animate-bounce duration-300 fill-mode-backwards hover:fill-mode-forwards"
 >
-    <!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
@@ -44,9 +44,9 @@ You can also use variant modifiers to target media queries like responsive break
 
 ```html
 <div
-    class="animate-bounce duration-300 fill-mode-backwards md:fill-mode-forwards"
+  class="animate-bounce duration-300 fill-mode-backwards md:fill-mode-forwards"
 >
-    <!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
@@ -61,14 +61,14 @@ By default, Tailwind provides `animation-direction` utilities for all of the bui
 ```js
 // @filename tailwind.config.js
 module.exports = {
-    theme: {
-        extend: {
-            animationDirection: {
-                "forwards-backwards": "forwards, backwards",
-            },
-        },
+  theme: {
+    extend: {
+      animationDirection: {
+        "forwards-backwards": "forwards, backwards",
+      },
     },
-}
+  },
+};
 ```
 
 Learn more about customizing the default theme in the [theme customization](https://tailwindcss.com/docs/theme#customizing-the-default-theme) documentation.
@@ -79,7 +79,7 @@ If you need to use a one-off `animation-fill-mode` value that doesn’t make sen
 
 ```html
 <div class="fill-mode-[forwards,backwards]">
-    <!-- ... -->
+  <!-- ... -->
 </div>
 ```
 

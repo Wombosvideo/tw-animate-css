@@ -35,7 +35,7 @@ Tailwind lets you conditionally apply utility classes in different states using 
 
 ```html
 <div class="animate-bounce duration-300 hover:duration-0">
-	<!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
@@ -47,7 +47,7 @@ You can also use variant modifiers to target media queries like responsive break
 
 ```html
 <div class="animate-bounce duration-150 md:duration-0">
-	<!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
@@ -62,14 +62,14 @@ By default, Tailwind provides `animation-duration` utilities for all of the buil
 ```js
 // @filename tailwind.config.js
 module.exports = {
-	theme: {
-		extend: {
-			animationDuration: {
-				"2s": "2s",
-			},
-		},
-	},
-}
+  theme: {
+    extend: {
+      animationDuration: {
+        "2s": "2s",
+      },
+    },
+  },
+};
 ```
 
 Learn more about customizing the default theme in the [theme customization](https://tailwindcss.com/docs/theme#customizing-the-default-theme) documentation.
@@ -80,7 +80,7 @@ If you need to use a one-off `animation-duration` value that doesn’t make sens
 
 ```html
 <div class="duration-[2s]">
-	<!-- ... -->
+  <!-- ... -->
 </div>
 ```
 

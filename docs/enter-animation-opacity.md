@@ -42,7 +42,7 @@ Tailwind lets you conditionally apply utility classes in different states using 
 
 ```html
 <div class="animate-bounce fade-in-25 hover:fade-in-50">
-	<!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
@@ -54,7 +54,7 @@ You can also use variant modifiers to target media queries like responsive break
 
 ```html
 <div class="animate-bounce fade-in-25 md:fade-in-50">
-	<!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
@@ -69,14 +69,14 @@ By default, Tailwind makes the entire default [opacity scale](https://tailwindcs
 ```js
 // @filename tailwind.config.js
 module.exports = {
-	theme: {
-		extend: {
-			opacity: {
-				67: ".67",
-			},
-		},
-	},
-}
+  theme: {
+    extend: {
+      opacity: {
+        67: ".67",
+      },
+    },
+  },
+};
 ```
 
 Alternatively, you can customize just your animation opacities by editing `theme.animationOpacity` or `theme.extend.animationOpacity` in your `tailwind.config.js` file.
@@ -89,7 +89,7 @@ If you need to use a one-off animation opacity value that doesn’t make sense t
 
 ```html
 <div class="fade-in-[.67]">
-	<!-- ... -->
+  <!-- ... -->
 </div>
 ```
 

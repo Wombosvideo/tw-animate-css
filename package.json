@@ -4,7 +4,7 @@
   "description": "TailwindCSS v4.0 compatible replacement for `tailwindcss-animate`.",
   "scripts": {
     "build": "pnpx @tailwindcss/cli -i ./src/tw-animate.css -o ./dist/tw-animate.css -m",
-    "format": "prettier --write ."
+    "format": "prettier --write --ignore-unknown *"
   },
   "main": "dist/tw-animate.css",
   "exports": "./dist/tw-animate.css",

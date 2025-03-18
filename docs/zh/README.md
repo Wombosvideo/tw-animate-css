@@ -31,14 +31,14 @@ npm install -D tailwindcss-animate
 ```js
 // @filename tailwind.config.js
 module.exports = {
-    theme: {
-        // ...
-    },
-    plugins: [
-        require("tailwindcss-animate"),
-        // ...
-    ],
-}
+  theme: {
+    // ...
+  },
+  plugins: [
+    require("tailwindcss-animate"),
+    // ...
+  ],
+};
 ```
 
 ## 文档

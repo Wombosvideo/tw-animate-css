@@ -202,7 +202,7 @@ Tailwind lets you conditionally apply utility classes in different states using 
 
 ```html
 <div class="animate-out slide-out-to-left hover:slide-out-to-right">
-	<!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
@@ -214,7 +214,7 @@ You can also use variant modifiers to target media queries like responsive break
 
 ```html
 <div class="animate-out slide-out-to-left md:slide-out-to-right">
-	<!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
@@ -229,14 +229,14 @@ By default, Tailwind makes the entire default [translate scale](https://tailwind
 ```js
 // @filename tailwind.config.js
 module.exports = {
-	theme: {
-		extend: {
-			translate: {
-				4.25: "17rem",
-			},
-		},
-	},
-}
+  theme: {
+    extend: {
+      translate: {
+        4.25: "17rem",
+      },
+    },
+  },
+};
 ```
 
 Alternatively, you can customize just your animation translate scale by editing `theme.animationTranslate` or `theme.extend.animationTranslate` in your `tailwind.config.js` file.
@@ -249,7 +249,7 @@ If you need to use a one-off animation translation value that doesn’t make sen
 
 ```html
 <div class="slide-out-to-left-[17rem]">
-	<!-- ... -->
+  <!-- ... -->
 </div>
 ```
 

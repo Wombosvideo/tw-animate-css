@@ -36,7 +36,7 @@ Tailwind lets you conditionally apply utility classes in different states using 
 
 ```html
 <div class="animate-bounce spin-in-45 hover:spin-in-90">
-    <!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
@@ -48,7 +48,7 @@ You can also use variant modifiers to target media queries like responsive break
 
 ```html
 <div class="animate-bounce spin-in-45 md:spin-in-90">
-    <!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
@@ -63,14 +63,14 @@ By default, Tailwind makes the entire default [rotate](https://tailwindcss.com/d
 ```js
 // @filename tailwind.config.js
 module.exports = {
-    theme: {
-        extend: {
-            rotate: {
-                175: "175deg",
-            },
-        },
+  theme: {
+    extend: {
+      rotate: {
+        175: "175deg",
+      },
     },
-}
+  },
+};
 ```
 
 Alternatively, you can customize just your animation rotations by editing `theme.animationRotate` or `theme.extend.animationRotate` in your `tailwind.config.js` file.
@@ -83,7 +83,7 @@ If you need to use a one-off animation rotation value that doesn’t make sense 
 
 ```html
 <div class="spin-in-[175deg]">
-    <!-- ... -->
+  <!-- ... -->
 </div>
 ```
 

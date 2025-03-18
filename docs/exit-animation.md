@@ -27,12 +27,12 @@ You can apply multiple exit animations at the same time as long as they apply to
 ```html
 <button class="animate-out fade-out zoom-out ...">Button A</button>
 <button class="animate-out slide-out-from-top slide-out-from-left ...">
-	Button B
+  Button B
 </button>
 <button
-	class="animate-out fade-out zoom-out slide-out-from-top slide-out-from-left ..."
+  class="animate-out fade-out zoom-out slide-out-from-top slide-out-from-left ..."
 >
-	Button C
+  Button C
 </button>
 ```
 
@@ -44,7 +44,7 @@ Tailwind lets you conditionally apply utility classes in different states using 
 
 ```html
 <div class="hover:animate-out ...">
-	<!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
@@ -56,7 +56,7 @@ You can also use variant modifiers to target media queries like responsive break
 
 ```html
 <div class="md:animate-out ...">
-	<!-- ... -->
+  <!-- ... -->
 </div>
 ```
 
