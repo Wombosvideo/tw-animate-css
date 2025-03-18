@@ -49,8 +49,9 @@ Instead of being an old-fashioned JavaScript plugin, this package provides a CSS
 1. Download the [`tw-animate.css`](https://raw.githubusercontent.com/Wombosvideo/tw-animate-css/refs/heads/main/src/tw-animate-css.css) file from GitHub and place it next to your `app.css`.
 2. Add the following line to your `app.css` or `globals.css` file:
 
-   ```css
-   @import "./tw-animate.css";
+   ```diff
+   @import "tailwindcss"
+   + @import "./tw-animate.css";
    ```
 
 3. Start using the animations!
