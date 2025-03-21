@@ -39,7 +39,7 @@
   "scripts": {
     "build": "pnpx @tailwindcss/cli -i ./src/tw-animate.css -o ./dist/tw-animate.css -m",
     "format": "prettier --write --ignore-unknown .",
-    "prepare": "if [ \"$NODE_ENV\" != \"production\" ]; then pnpx simple-git-hooks; fi"
+    "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpx lint-staged",

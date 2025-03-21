@@ -1,0 +1,62 @@
+name: Publish canary to npm with pnpm
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  id-token: write
+
+jobs:
+  release:
+    name: Release Canary
+    runs-on: upnpmtu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build package
+        run: pnpm build
+
+      - name: Publish canary to npm
+        run: |
+          # --- Check if package exists in npm registry ---
+          package_name=$(pnpx json -f package.json -a name)
+          npm view "$package_name" 2>/dev/null || {
+            echo "$package_name does not exist in the npm registry. Skipping publish."
+            exit 0
+          }
+          # --- Determine and release the next canary version ---
+          current_latest=$(pnpx json -f package.json -a version)
+          IFS='.' read -r major minor patch <<<"$current_latest"
+          upcoming_minor="$major.$((minor + 1)).0"
+          current_canary=$(npm view "$package_name" dist-tags.canary 2>/dev/null)
+          if [ -z "$current_canary" ]; then
+            release_version="$upcoming_minor-canary.0"
+          else
+            IFS='.-' read -r canary_major canary_minor canary_patch canary_tag canary_version <<<"$current_canary"
+            release_version="$canary_major.$canary_minor.$canary_patch-canary.$((canary_version + 1))"
+          fi
+          pnpx json -I -f package.json -e "this.version=\"$release_version\""
+          pnpm publish --provenance --access public --no-git-checks --tag canary
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
