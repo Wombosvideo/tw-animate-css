@@ -9,6 +9,8 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 permissions:
   id-token: write
+  contents: write
+  statuses: write
 
 jobs:
   release:
@@ -58,5 +60,19 @@ jobs:
           fi
           pnpx json -I -f package.json -e "this.version=\"$release_version\""
           pnpm publish --provenance --access public --no-git-checks --tag canary
+          # --- Set the status with the release link ---
+          package_url="https://www.npmjs.com/package/$package_name/v/$release_version"
+          curl -L \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/comments" \
+            -d "{\"body\": \"Package released - [\`$package_name@$release_version\`]($package_url)\"}"
+          curl -L \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA" \
+            -d "{\"state\": \"success\", \"context\": \"Package released\", \"description\": \"$package_name@$release_version\", \"target_url\": \"$package_url\"}"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
