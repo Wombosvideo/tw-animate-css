@@ -11,13 +11,27 @@ A collection of Tailwind CSS v4.0 utilities for creating beautiful animations.
 
 This package is a replacement for [`tailwindcss-animate`][Original_Plugin_GitHub]. It embraces the new [CSS-first architecture][TailwindCSS_Custom_Utilities], providing a pure CSS solution for adding animation capabilities to your Tailwind CSS project without relying on the legacy JavaScript plugin system or having to define all keywords from scratch.
 
-## Installation
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [NPM](#npm)
+  - [Manual Download](#manual-download)
+- [Usage](#usage)
+  - [Enter/Exit Animations](#enterexit-animations)
+    - [Base Classes](#base-classes)
+    - [Parameter Classes](#parameter-classes)
+    - [Transform Classes](#transform-classes)
+  - [Ready-to-Use Animations](#ready-to-use-animations)
+- [Examples](#examples)
+- [Notes on Compatibility](#notes-on-compatibility)
+
+## Getting Started
 
 ### NPM
 
 1. Install the package with `npm`:
 
-   ```bash
+   ```sh
    npm install -D tw-animate-css
    ```
 
@@ -30,11 +44,9 @@ This package is a replacement for [`tailwindcss-animate`][Original_Plugin_GitHub
 3. Start using the animations!
 
 > [!NOTE]
-> This code works with esbuild, Vite and probably other bundlers too. If you are
-> using a different bundler, the syntax may differ.
-> [Let me know][Create_Issue] how it works and I'll update the documentation.
+> The above guide works for esbuild, Vite and probably other bundlers too. If you are using a different bundler, the syntax may differ. [Let me know][Create_Issue] how it works and I'll update the documentation.
 
-### Manual download
+### Manual Download
 
 1. Download the [`tw-animate.css`][CSS_File]
    file from GitHub and place it next to your `app.css` or `globals.css` file.
@@ -135,15 +147,25 @@ To customize the animation parameters, use the following classes:
 </div>
 ```
 
+## Notes on Compatibility
+
 > [!NOTE]
-> I use very litte of the original library, so it might not be a 100% compatible
-> drop-in replacement. If you notice any inconsistencies, feel free to contribute
-> to this repository by opening a pull-request.
+> I use only a small portion of the original plugin, so it might not be a 100% compatible drop-in replacement. If you notice any inconsistencies, feel free to contribute to this repository by opening a pull-request.
 
 <!-- Links -->
 
 [Original_Plugin_GitHub]: https://github.com/jamiebuilds/tailwindcss-animate
 [Original_Plugin_Docs]: https://github.com/jamiebuilds/tailwindcss-animate/blob/main/README.md
 [TailwindCSS_Custom_Utilities]: https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities
+[TailwindCSS_Duration]: https://tailwindcss.com/docs/transition-duration
+[TailwindCSS_Easing]: https://tailwindcss.com/docs/transition-timing-function
+[TailwindCSS_Delay]: https://tailwindcss.com/docs/transition-delay
+[MDN_Duration]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration
+[MDN_Ease]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function
+[MDN_Delay]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay
+[MDN_Repeat]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count
+[MDN_Direction]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction
+[MDN_Fill_Mode]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode
+[MDN_Play_State]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state
 [Create_Issue]: https://github.com/Wombosvideo/tw-animate-css/issues/new
 [CSS_File]: https://raw.githubusercontent.com/Wombosvideo/tw-animate-css/refs/heads/main/src/tw-animate.css
