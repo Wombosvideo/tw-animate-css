@@ -5,11 +5,11 @@
 [![MIT license](https://img.shields.io/github/license/Wombosvideo/tw-animate-css)]()
 [![GitHub stars](https://img.shields.io/github/stars/Wombosvideo/tw-animate-css?color=blue)](https://github.com/Wombosvideo/tw-animate-css)
 
-TailwindCSS v4.0 compatible replacement for [`tailwindcss-animate`][Original_Plugin_GitHub].
+A collection of Tailwind CSS v4.0 utilities for creating beautiful animations.
 
-Instead of being an old-fashioned JavaScript plugin, this package provides a
-CSS file defining custom utilities based on the new
-[CSS-first architecture][TailwindCSS_Custom_Utilities].
+---
+
+This package is a replacement for [`tailwindcss-animate`][Original_Plugin_GitHub]. It embraces the new [CSS-first architecture][TailwindCSS_Custom_Utilities], providing a pure CSS solution for adding animation capabilities to your Tailwind CSS project without relying on the legacy JavaScript plugin system or having to define all keywords from scratch.
 
 ## Installation
 
