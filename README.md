@@ -5,7 +5,7 @@
 [![MIT license](https://img.shields.io/github/license/Wombosvideo/tw-animate-css)]()
 [![GitHub stars](https://img.shields.io/github/stars/Wombosvideo/tw-animate-css?color=blue)](https://github.com/Wombosvideo/tw-animate-css)
 
-A collection of Tailwind CSS v4.0 utilities for creating beautiful animations.
+A collection of Tailwind CSS v4.0 utilities for creating beautiful animations. Includes ready-to-use animations `accordion-down`, `accordion-up` and `caret-blink`, as well as a set of utilities for creating your own animations.
 
 ---
 
