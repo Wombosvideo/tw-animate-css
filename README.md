@@ -43,6 +43,22 @@ This package is a replacement for [`tailwindcss-animate`][Original_Plugin_GitHub
 
 3. Start using the animations!
 
+   ```html
+   <!-- Add an animated fade and zoom entrance -->
+   <div class="animate-in fade-in zoom-in">...</div>
+
+   <!-- Add an animated slide to top-left exit -->
+   <div class="animate-out slide-out-to-top slide-out-to-left">...</div>
+
+   <!-- Control animation duration -->
+   <div class="... duration-300">...</div>
+
+   <!-- Control animation delay -->
+   <div class="... delay-150">...</div>
+
+   <!-- And so much more! -->
+   ```
+
 > [!NOTE]
 > The above guide works for esbuild, Vite and probably other bundlers too. If you are using a different bundler, the syntax may differ. [Let me know][Create_Issue] how it works and I'll update the documentation.
 
@@ -57,6 +73,22 @@ This package is a replacement for [`tailwindcss-animate`][Original_Plugin_GitHub
    ```
 
 3. Start using the animations!
+
+   ```html
+   <!-- Add an animated fade and zoom entrance -->
+   <div class="animate-in fade-in zoom-in">...</div>
+
+   <!-- Add an animated slide to top-left exit -->
+   <div class="animate-out slide-out-to-top slide-out-to-left">...</div>
+
+   <!-- Control animation duration -->
+   <div class="... duration-300">...</div>
+
+   <!-- Control animation delay -->
+   <div class="... delay-150">...</div>
+
+   <!-- And so much more! -->
+   ```
 
 ## Usage
 
