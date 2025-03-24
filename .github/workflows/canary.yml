@@ -44,12 +44,12 @@ jobs:
           PACKAGE_VERSION=$(pnpx json -f package.json -a version)
           VERSIONS=$(npm view $PACKAGE_NAME dist-tags --json)
           LATEST_VERSION=$(echo $VERSIONS | pnpx json latest)
-          if [[ $GITHUB_EVENT_NAME == 'issue_comment' ]]; then
+            if [[ $GITHUB_EVENT_NAME == 'issue_comment' ]]; then
             PR_NUMBER=$(echo "${{ github.event.issue.pull_request.url }}" | grep -o '[0-9]*$')
             LATEST_COMMIT_SHA=$(curl -fsSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/commits" | bunx json -a sha | tail -n 1)
             git checkout $LATEST_COMMIT_SHA
             TAG="test"
-            RELEASE_VERSION="0.0.0-$LATEST_COMMIT_SHA"
+            RELEASE_VERSION="0.0.0-${LATEST_COMMIT_SHA:0:7}"
           else
             TAG="canary"
             RELEASE_VERSION=$(pnpx semver $LATEST_VERSION -i minor)
