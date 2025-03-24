@@ -61,6 +61,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
+    "@tailwindcss/cli": "^4.0.15",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
     "simple-git-hooks": "^2.12.1",
