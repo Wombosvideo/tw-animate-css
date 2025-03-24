@@ -63,18 +63,20 @@ jobs:
           pnpm publish --provenance --access public --no-git-checks --tag $TAG
 
           PACKAGE_URL="https://www.npmjs.com/package/$PACKAGE_NAME/v/$RELEASE_VERSION"
-          if [[ $GITHUB_EVENT_NAME == 'push' ]]; then
+          if [[ $GITHUB_EVENT_NAME == 'issue_comment' ]]; then
+            PR_NUMBER=$(echo "${{ github.event.issue.pull_request.url }}" | grep -o '[0-9]*$')
+            curl -fsSL -X DELETE -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/comments/${{ github.event.comment.id }}" >/dev/null \
+              && echo "🟢 Releasing comment deleted!" || echo "🔴 Failed to delete releasing comment."
+            curl -fsSL -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" \
+              -d "{\"body\": \"Test package released - [\`$PACKAGE_NAME@$RELEASE_VERSION\`]($PACKAGE_URL)\"}" >/dev/null \
+              && echo "🟢 Release comment to PR added!" || echo "🔴 Failed to add release comment to PR."
+          elif [[ $GITHUB_EVENT_NAME == 'push' ]]; then
             curl -fsSL -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/comments" \
               -d "{\"body\": \"Package released - [\`$PACKAGE_NAME@$RELEASE_VERSION\`]($PACKAGE_URL)\"}" >/dev/null \
               && echo "🟢 Release comment added!" || echo "🔴 Failed to add release comment."
             curl -fsSL -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA" \
               -d "{\"state\": \"success\", \"context\": \"Package released\", \"description\": \"$PACKAGE_NAME@$RELEASE_VERSION\", \"target_url\": \"$PACKAGE_URL\"}" >/dev/null \
               && echo "🟢 Release status updated!" || echo "🔴 Failed to update release status."
-          elif [[ $GITHUB_EVENT_NAME == 'issue_comment' ]]; then
-            PR_NUMBER=$(echo "${{ github.event.issue.pull_request.url }}" | grep -o '[0-9]*$')
-            curl -fsSL -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" \
-              -d "{\"body\": \"Test package released - [\`$PACKAGE_NAME@$RELEASE_VERSION\`]($PACKAGE_URL)\"}" >/dev/null \
-              && echo "🟢 Release comment to PR added!" || echo "🔴 Failed to add release comment to PR."
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
