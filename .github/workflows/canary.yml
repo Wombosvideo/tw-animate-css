@@ -53,7 +53,7 @@ jobs:
           if [[ $GITHUB_EVENT_NAME == 'issue_comment' ]]; then
             TAG="test"
             RELEASE_VERSION="0.0.0-$(openssl rand -hex 7)"
-          elif [[ $PACKAGE_VERSION == $LATEST_VERSION ]]; then
+          else
             TAG="canary"
             RELEASE_VERSION=$(pnpx semver $LATEST_VERSION -i minor)
             TAGGED_VERSION=$(echo $VERSIONS | pnpx json $TAG)
