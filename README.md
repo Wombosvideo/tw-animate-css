@@ -105,45 +105,45 @@ To keep the README concise, I'll define a few variables:
 
 #### Base Classes
 
-| Class          | Description                                                                                                |
-| -------------- | ---------------------------------------------------------------------------------------------------------- |
-| `animate-<io>` | Base class for enter/exit animations. This needs to be applied in order for enter/exit animations to work. |
+| Class                     | Description                                                                                                |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [`animate-<io>`][Docs_IO] | Base class for enter/exit animations. This needs to be applied in order for enter/exit animations to work. |
 
 #### Parameter Classes
 
 To customize the animation parameters, use the following classes:
 
-| Class         | Description                                                                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `duration-*`  | Sets [`animation-duration`][MDN_Duration]. Uses `--tw-duration`, see [Tailwind CSS docs][TailwindCSS_Duration]. Defaults to `duration-150`. |
-| `ease-*`      | Sets [`animation-timing-function`][MDN_Ease]. Uses `--tw-ease`, see [Tailwind CSS docs][TailwindCSS_Easing]. Defaults to `ease-[ease]`.     |
-| `delay-*`     | Sets [`animation-delay`][MDN_Delay]. Possible values: Any `<number>` or any other `[<value>]`.                                              |
-| `repeat-*`    | Sets [`animation-iteration-count`][MDN_Repeat]. Possible values: Any `<number>` or `infinite`.                                              |
-| `direction-*` | Sets [`animation-direction`][MDN_Direction]. Possible values: `normal`, `reverse`, `alternate` or `alternate-reverse`.                      |
-| `fill-mode-*` | Sets [`animation-fill-mode`][MDN_Fill_Mode]. Possible values: `none`, `forwards`, `backwards` or `both`.                                    |
-| `running`     | Sets [`animation-play-state`][MDN_Play_State] to `running`.                                                                                 |
-| `paused`      | Sets [`animation-play-state`][MDN_Play_State] to `paused`.                                                                                  |
+| Class                           | Description                                                                                                                                 |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`duration-*`][Docs_Duration]   | Sets [`animation-duration`][MDN_Duration]. Uses `--tw-duration`, see [Tailwind CSS docs][TailwindCSS_Duration]. Defaults to `duration-150`. |
+| [`ease-*`][Docs_Ease]           | Sets [`animation-timing-function`][MDN_Ease]. Uses `--tw-ease`, see [Tailwind CSS docs][TailwindCSS_Easing]. Defaults to `ease-[ease]`.     |
+| [`delay-*`][Docs_Delay]         | Sets [`animation-delay`][MDN_Delay]. Possible values: Any `<number>` or any other `[<value>]`.                                              |
+| [`repeat-*`][Docs_Repeat]       | Sets [`animation-iteration-count`][MDN_Repeat]. Possible values: Any `<number>` or `infinite`.                                              |
+| [`direction-*`][Docs_Direction] | Sets [`animation-direction`][MDN_Direction]. Possible values: `normal`, `reverse`, `alternate` or `alternate-reverse`.                      |
+| [`fill-mode-*`][Docs_Fill_Mode] | Sets [`animation-fill-mode`][MDN_Fill_Mode]. Possible values: `none`, `forwards`, `backwards` or `both`.                                    |
+| [`running`][Docs_Running]       | Sets [`animation-play-state`][MDN_Play_State] to `running`.                                                                                 |
+| [`paused`][Docs_Paused]         | Sets [`animation-play-state`][MDN_Play_State] to `paused`.                                                                                  |
 
 #### Transform Classes
 
-| Syntax          | Description                                                                                                                      |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `fade-<io>`     | Fades the element in from or out to `opacity: 0`.                                                                                |
-| `fade-<io>-*`   | Fades the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.  |
-| `zoom-<io>`     | Zooms the element in from or out to `scale3D(0,0,0)`.                                                                            |
-| `zoom-<io>-*`   | Zooms the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.  |
-| `spin-<io>`     | Spins the element in from or out to `rotate(30deg)`.                                                                             |
-| `spin-<io>-*`   | Spins the element in from or out to the specified value. Possible values: Any `<number>` (degrees) or any other `[<value>]`.     |
-| `slide-<dir>`   | Slides the element in from or out to the specified direction (`100%`).                                                           |
-| `slide-<dir>-*` | Slides the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`. |
+| Syntax                        | Description                                                                                                                      |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| [`fade-<io>`][Docs_Fade]      | Fades the element in from or out to `opacity: 0`.                                                                                |
+| [`fade-<io>-*`][Docs_Fade]    | Fades the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.  |
+| [`zoom-<io>`][Docs_Zoom]      | Zooms the element in from or out to `scale3D(0,0,0)`.                                                                            |
+| [`zoom-<io>-*`][Docs_Zoom]    | Zooms the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.  |
+| [`spin-<io>`][Docs_Spin]      | Spins the element in from or out to `rotate(30deg)`.                                                                             |
+| [`spin-<io>-*`][Docs_Spin]    | Spins the element in from or out to the specified value. Possible values: Any `<number>` (degrees) or any other `[<value>]`.     |
+| [`slide-<dir>`][Docs_Slide]   | Slides the element in from or out to the specified direction (`100%`).                                                           |
+| [`slide-<dir>-*`][Docs_Slide] | Slides the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`. |
 
 ### Ready-to-Use Animations
 
-| Class            | Description                                                                                                                                   |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `accordion-down` | Accordion down animation. Requires `--radix-accordion-content-height` or `--bits-accordion-content-height` to be set to the content's height. |
-| `accordion-up`   | Accordion up animation. Requires `--radix-accordion-content-height` or `--bits-accordion-content-height` to be set to the content's height.   |
-| `caret-blink`    | Blinking animation for caret/cursor.                                                                                                          |
+| Class                              | Description                                                                                                                                   |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`accordion-down`][Docs_Accordion] | Accordion down animation. Requires `--radix-accordion-content-height` or `--bits-accordion-content-height` to be set to the content's height. |
+| [`accordion-up`][Docs_Accordion]   | Accordion up animation. Requires `--radix-accordion-content-height` or `--bits-accordion-content-height` to be set to the content's height.   |
+| [`caret-blink`][Docs_Caret]        | Blinking animation for caret/cursor.                                                                                                          |
 
 ## Examples
 
@@ -192,6 +192,21 @@ To customize the animation parameters, use the following classes:
 [TailwindCSS_Duration]: https://tailwindcss.com/docs/transition-duration
 [TailwindCSS_Easing]: https://tailwindcss.com/docs/transition-timing-function
 [TailwindCSS_Delay]: https://tailwindcss.com/docs/transition-delay
+[Docs_IO]: ./docs/animations/in-out.md
+[Docs_Duration]: ./docs/parameters/animation-duration.md
+[Docs_Ease]: ./docs/parameters/animation-timing-function.md
+[Docs_Delay]: ./docs/parameters/animation-delay.md
+[Docs_Repeat]: ./docs/parameters/animation-iteration-count.md
+[Docs_Direction]: ./docs/parameters/animation-direction.md
+[Docs_Fill_Mode]: ./docs/parameters/animation-fill-mode.md
+[Docs_Running]: ./docs/parameters/animation-play-state.md#running
+[Docs_Paused]: ./docs/parameters/animation-play-state.md#paused
+[Docs_Fade]: ./docs/transform/fade.md
+[Docs_Zoom]: ./docs/transform/zoom.md
+[Docs_Spin]: ./docs/transform/spin.md
+[Docs_Slide]: ./docs/transform/slide.md
+[Docs_Accordion]: ./docs/animations/accordion.md
+[Docs_Caret]: ./docs/animations/caret-blink.md
 [MDN_Duration]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration
 [MDN_Ease]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function
 [MDN_Delay]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay
