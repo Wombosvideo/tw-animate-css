@@ -75,6 +75,7 @@
 
   @keyframes exit {
     to {
+      display: var(--tw-exit-hidden, );
       opacity: var(--tw-exit-opacity, 1);
       transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0)
         scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1))
@@ -158,6 +159,10 @@
 }
 @utility fade-out-* {
   --tw-exit-opacity: --value(--percentage- *, [ *]);
+}
+
+@utility hidden-out {
+  --tw-exit-hidden: none;
 }
 
 @utility zoom-in {
