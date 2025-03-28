@@ -1,13 +1,8 @@
 # Accordion Animations
 
-Until browser support for [`interpolate-size`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the accordion content. You can set one of the following classes to the accordion content to set the height:
-
-- `--radix-accordion-content-height` as in the [Radix documentation][Radix_Docs]
-- `--bits-accordion-content-height` as in the [BitsUI documentation][Bits_Docs]
-
 ## `animate-accordion-down`
 
-Animation for opening an accordion. This animation slides the accordion content down until it reaches its full height.
+Animation for opening an accordion. This animation slides the accordion content down until it reaches its full height. You need to [specify the content height](#setting-content-height) for this animation to work.
 
 <table>
 <thead>
@@ -45,7 +40,7 @@ animation: accordion-down var(--tw-duration, 200ms) ease-out;
 
 ## `animate-accordion-up`
 
-Animation for closing an accordion. This animation slides the accordion content up until it reaches a height of `0`.
+Animation for closing an accordion. This animation slides the accordion content up until it reaches a height of `0`. You need to [specify the content height](#setting-content-height) for this animation to work.
 
 <table>
 <thead>
@@ -80,6 +75,71 @@ animation: accordion-up var(--tw-duration, 200ms) ease-out;
 </tr>
 </tbody>
 </table>
+
+## Setting content height
+
+Until browser support for [`interpolate-size`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the accordion content. You can set one of the following variables to the accordion content to set the height:
+
+- `--radix-accordion-content-height` as in the [Radix documentation][Radix_Docs]
+- `--bits-accordion-content-height` as in the [BitsUI documentation][Bits_Docs]
+
+Check out the [setting content height](#setting-content-height) section for more information.
+
+### HTML
+
+```html
+<div style="--radix-accordion-content-height: 1.75em">...</div>
+```
+
+### JavaScript
+
+```js
+document
+  .getElementById("faq-accordion-1")
+  .style.setProperty("--radix-accordion-content-height", "1.75em");
+```
+
+### Using Radix (React)
+
+Radix automatically sets the `--radix-accordion-content-height` variable. Just use the accordion component primitive!
+
+```jsx
+import { Accordion } from "radix-ui";
+
+export default () => (
+  <Accordion.Root>
+    <Accordion.Item>
+      <Accordion.Header>
+        <Accordion.Trigger>...</Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Content>...</Accordion.Content>
+    </Accordion.Item>
+  </Accordion.Root>
+);
+```
+
+Learn more about Radix' accordion primitive in the [Radix documentation][Radix_Docs].
+
+### Using BitsUI (Svelte)
+
+BitsUI automatically sets the `--bits-accordion-content-height` variable. Just use the headless accordion component primitive!
+
+```svelte
+<script>
+  import { Accordion } from "bits-ui";
+</script>
+
+<Accordion.Root type="single">
+  <Accordion.Item>
+    <Accordion.Header>
+      <Accordion.Trigger>...</Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Content>...</Accordion.Content>
+  </Accordion.Item>
+</Accordion.Root>
+```
+
+Learn more about BitsUI's accordion primitive in the [BitsUI documentation][Bits_Docs].
 
 <!-- Links -->
 
