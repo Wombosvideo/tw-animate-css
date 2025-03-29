@@ -66,6 +66,7 @@
 
   @keyframes enter {
     from {
+      display: var(--tw-enter-display, );
       opacity: var(--tw-enter-opacity, 1);
       transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0)
         scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1))
@@ -161,8 +162,12 @@
   --tw-exit-opacity: --value(--percentage- *, [ *]);
 }
 
-@utility hidden-out {
-  --tw-exit-hidden: none;
+@utility display-in {
+  --tw-enter-display: none;
+}
+
+@utility display-out {
+  --tw-exit-display: none;
 }
 
 @utility zoom-in {
