@@ -2,7 +2,10 @@
 
 ## `animate-accordion-down`
 
-Animation for opening an accordion. This animation slides the accordion content down until it reaches its full height. You need to [specify the content height](#setting-content-height) for this animation to work.
+Animation for opening an accordion. This animation slides the accordion content down until it reaches its full height.
+
+> [!NOTE]
+> You need to [specify the content height](#setting-content-height) for this animation to work.
 
 <table>
 <thead>
@@ -21,14 +24,20 @@ Animation for opening an accordion. This animation slides the accordion content 
 <td>
 
 ```css
-animation: accordion-down var(--tw-duration, 200ms) ease-out;
+animation: content-down var(--tw-duration, 200ms) ease-out;
 
-@keyframes accordion-down {
+@keyframes content-down {
   from {
     height: 0;
   }
   to {
-    height: var(--radix-accordion-content-height, var(--bits-accordion-content-height));
+    height: var(
+      --radix-accordion-content-height,
+      var(
+        --bits-accordion-content-height,
+        var(--radix-collapsible-content-height, var(--bits-collapsible-content-height, auto))
+      )
+    );
   }
 }
 ```
@@ -40,7 +49,10 @@ animation: accordion-down var(--tw-duration, 200ms) ease-out;
 
 ## `animate-accordion-up`
 
-Animation for closing an accordion. This animation slides the accordion content up until it reaches a height of `0`. You need to [specify the content height](#setting-content-height) for this animation to work.
+Animation for closing an accordion. This animation slides the accordion content up until it reaches a height of `0`.
+
+> [!NOTE]
+> You need to [specify the content height](#setting-content-height) for this animation to work.
 
 <table>
 <thead>
@@ -59,11 +71,17 @@ Animation for closing an accordion. This animation slides the accordion content 
 <td>
 
 ```css
-animation: accordion-up var(--tw-duration, 200ms) ease-out;
+animation: content-up var(--tw-duration, 200ms) ease-out;
 
-@keyframes accordion-up {
+@keyframes content-up {
   from {
-    height: var(--radix-accordion-content-height, var(--bits-accordion-content-height));
+    height: var(
+      --radix-accordion-content-height,
+      var(
+        --bits-accordion-content-height,
+        var(--radix-collapsible-content-height, var(--bits-collapsible-content-height, auto))
+      )
+    );
   }
   to {
     height: 0;
@@ -78,7 +96,7 @@ animation: accordion-up var(--tw-duration, 200ms) ease-out;
 
 ## Setting content height
 
-Until browser support for [`interpolate-size`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the accordion content. You can set one of the following variables to the accordion content to set the height:
+Until browser support for [`interpolate-size: allow-keywords`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the accordion content. You can set one of the following variables to the accordion content to set the height:
 
 - `--radix-accordion-content-height` as in the [Radix documentation][Radix_Docs]
 - `--bits-accordion-content-height` as in the [BitsUI documentation][Bits_Docs]
