@@ -84,6 +84,20 @@
     }
   }
 
+  /*
+   * The `--radix-accordion-content-height` variable is set by Radix UI's
+   * Accordion component. The `--bits-accordion-content-height` variable is set
+   * by Bits' Accordion component. The `--radix-collapsible-content-height`
+   * variable is set by Radix UI's Collapsible component. The
+   * `--bits-collapsible-content-height` variable is set by Bits' Collapsible
+   * component.
+   *
+   * These variables are used to animate the height of the content when it is
+   * expanded or collapsed. `auto` is used as a fallback value but it requires
+   * `interpolate-size: allow-keywords` to be set and is currently not widely
+   * supported. See <https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size>
+   */
+
   @keyframes content-down {
     from {
       height: 0;
@@ -138,19 +152,19 @@
 
 @utility delay-* {
   animation-delay: calc(--value(number) * 1ms);
-  animation-delay: --value(--animation-delay- *, [duration], [ *]);
+  animation-delay: --value(--animation-delay- *, [duration], "initial", [ *]);
 }
 
 @utility repeat-* {
-  animation-iteration-count: --value(--animation-repeat- *, number);
+  animation-iteration-count: --value(--animation-repeat- *, number, "initial", [ *]);
 }
 
 @utility direction-* {
-  animation-direction: --value(--animation-direction- *);
+  animation-direction: --value(--animation-direction- *, "initial", [ *]);
 }
 
 @utility fill-mode-* {
-  animation-fill-mode: --value(--animation-fill-mode- *);
+  animation-fill-mode: --value(--animation-fill-mode- *, "initial", [ *]);
 }
 
 @utility running {
@@ -159,11 +173,15 @@
 @utility paused {
   animation-play-state: paused;
 }
+@utility play-state-* {
+  animation-play-state: --value("initial", [ *]);
+}
 
 @utility fade-in {
   --tw-enter-opacity: 0;
 }
 @utility fade-in-* {
+  --tw-enter-opacity: calc(--value(number) / 100);
   --tw-enter-opacity: --value(--percentage- *, [ *]);
 }
 
@@ -171,6 +189,7 @@
   --tw-exit-opacity: 0;
 }
 @utility fade-out-* {
+  --tw-exit-opacity: calc(--value(number) / 100);
   --tw-exit-opacity: --value(--percentage- *, [ *]);
 }
 
@@ -214,7 +233,7 @@
 @utility slide-in-from-top-* {
   --tw-enter-translate-y: calc(--value(integer) * var(--spacing) * -1);
   --tw-enter-translate-y: calc(--value(--percentage- *, --percentage-translate- *) * -100%);
-  --tw-enter-translate-y: calc(--value(ratio) * 100%);
+  --tw-enter-translate-y: calc(--value(ratio) * -100%);
   --tw-enter-translate-y: calc(--value(--translate- *, [percentage], [length]) * -1);
 }
 @utility slide-in-from-bottom {
