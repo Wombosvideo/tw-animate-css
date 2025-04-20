@@ -92,9 +92,6 @@ This package is a replacement for [`tailwindcss-animate`][Original_Plugin_GitHub
 
 ## Usage
 
-> [!NOTE]
-> The documentation is still in progress and **not fully aligned with the current implementation**. Please refer to the [original documentation][Original_Plugin_Docs] if anything is missing.
-
 ### Enter/Exit Animations
 
 To keep the README concise, I'll define a few variables:
