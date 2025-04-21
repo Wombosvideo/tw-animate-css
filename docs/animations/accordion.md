@@ -24,20 +24,14 @@ Animation for opening an accordion. This animation slides the accordion content 
 <td>
 
 ```css
-animation: content-down var(--tw-duration, 200ms) ease-out;
+animation: accordion-down var(--tw-duration, 200ms) ease-out;
 
-@keyframes content-down {
+@keyframes accordion-down {
   from {
     height: 0;
   }
   to {
-    height: var(
-      --radix-accordion-content-height,
-      var(
-        --bits-accordion-content-height,
-        var(--radix-collapsible-content-height, var(--bits-collapsible-content-height, auto))
-      )
-    );
+    height: var(--radix-accordion-content-height, var(--bits-accordion-content-height, auto));
   }
 }
 ```
@@ -71,17 +65,11 @@ Animation for closing an accordion. This animation slides the accordion content 
 <td>
 
 ```css
-animation: content-up var(--tw-duration, 200ms) ease-out;
+animation: accordion-up var(--tw-duration, 200ms) ease-out;
 
-@keyframes content-up {
+@keyframes accordion-up {
   from {
-    height: var(
-      --radix-accordion-content-height,
-      var(
-        --bits-accordion-content-height,
-        var(--radix-collapsible-content-height, var(--bits-collapsible-content-height, auto))
-      )
-    );
+    height: var(--radix-accordion-content-height, var(--bits-accordion-content-height, auto));
   }
   to {
     height: 0;

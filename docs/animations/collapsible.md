@@ -24,20 +24,14 @@ Animation for opening a collapsible. This animation slides the collapsible conte
 <td>
 
 ```css
-animation: content-down var(--tw-duration, 200ms) ease-out;
+animation: collapsible-down var(--tw-duration, 200ms) ease-out;
 
-@keyframes content-down {
+@keyframes collapsible-down {
   from {
     height: 0;
   }
   to {
-    height: var(
-      --radix-accordion-content-height,
-      var(
-        --bits-accordion-content-height,
-        var(--radix-collapsible-content-height, var(--bits-collapsible-content-height, auto))
-      )
-    );
+    height: var(--radix-collapsible-content-height, var(--bits-collapsible-content-height, auto));
   }
 }
 ```
@@ -71,17 +65,11 @@ Animation for closing a collapsible. This animation slides the collapsible conte
 <td>
 
 ```css
-animation: content-up var(--tw-duration, 200ms) ease-out;
+animation: collapsible-up var(--tw-duration, 200ms) ease-out;
 
-@keyframes content-up {
+@keyframes collapsible-up {
   from {
-    height: var(
-      --radix-accordion-content-height,
-      var(
-        --bits-accordion-content-height,
-        var(--radix-collapsible-content-height, var(--bits-collapsible-content-height, auto))
-      )
-    );
+    height: var(--radix-collapsible-content-height, var(--bits-collapsible-content-height, auto));
   }
   to {
     height: 0;
