@@ -129,8 +129,6 @@
     }
   }
 
-  /* Caret animations */
-
   --animate-caret-blink: caret-blink 1.25s ease-out infinite;
 
   @keyframes caret-blink {
