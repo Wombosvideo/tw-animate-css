@@ -98,30 +98,36 @@
    * supported. See <https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size>
    */
 
-  @keyframes content-down {
+  @keyframes accordion-down {
     from {
       height: 0;
     }
     to {
-      height: var(
-        --radix-accordion-content-height,
-        var(
-          --bits-accordion-content-height,
-          var(--radix-collapsible-content-height, var(--bits-collapsible-content-height, auto))
-        )
-      );
+      height: var(--radix-accordion-content-height, var(--bits-accordion-content-height));
     }
   }
 
-  @keyframes content-up {
+  @keyframes accordion-up {
     from {
-      height: var(
-        --radix-accordion-content-height,
-        var(
-          --bits-accordion-content-height,
-          var(--radix-collapsible-content-height, var(--bits-collapsible-content-height, auto))
-        )
-      );
+      height: var(--radix-accordion-content-height, var(--bits-accordion-content-height));
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes collapsible-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height, var(--bits-collapsible-content-height));
+    }
+  }
+
+  @keyframes collapsible-up {
+    from {
+      height: var(--radix-collapsible-content-height, var(--bits-collapsible-content-height));
     }
     to {
       height: 0;
