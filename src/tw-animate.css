@@ -94,8 +94,6 @@
 
   --animate-accordion-down: accordion-down var(--tw-duration, 200ms) ease-out;
   --animate-accordion-up: accordion-up var(--tw-duration, 200ms) ease-out;
-  --animate-collapsible-down: collapsible-down var(--tw-duration, 200ms) ease-out;
-  --animate-collapsible-up: collapsible-up var(--tw-duration, 200ms) ease-out;
 
   @keyframes accordion-down {
     from {
@@ -114,6 +112,9 @@
       height: 0;
     }
   }
+
+  --animate-collapsible-down: collapsible-down var(--tw-duration, 200ms) ease-out;
+  --animate-collapsible-up: collapsible-up var(--tw-duration, 200ms) ease-out;
 
   @keyframes collapsible-down {
     from {
