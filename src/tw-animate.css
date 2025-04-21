@@ -79,16 +79,13 @@
   }
 
   /*
-  * Radix UI and Bits UI utilize CSS variables to define the height of Accordion 
-  * and Collapsible content during open/close animations. 
+  * Radix and Bits UI utilize CSS variables to define the height of Accordion and Collapsible
+  * content during open/close animations. The `--radix/bits-accordion-content-height` variables
+  * control the height of Accordion content, while collapsible variables are used for Collapsibles.
   *
-  * The `--radix-accordion-content-height` and `--bits-accordion-content-height` 
-  * variables control the height of Accordion content, while collapsible variables
-  * manages the height of Collapsible content.
-  *
-  * While `auto` serves as a fallback value, it requires the `interpolate-size:
-  * allow-keywords` property, which currently lacks broad browser support.
-  * Ref: <https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size>
+  * The fallback value `auto` is used here, but it depends on the `interpolate-size: allow-keywords`
+  * property, which currently has limited browser support. For more details, see: 
+  * <https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size>
   */
 
   --animate-accordion-down: accordion-down var(--tw-duration, 200ms) ease-out;
