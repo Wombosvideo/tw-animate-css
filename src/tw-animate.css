@@ -60,12 +60,6 @@
   --animate-in: enter var(--tw-duration, 150ms) var(--tw-ease, ease);
   --animate-out: exit var(--tw-duration, 150ms) var(--tw-ease, ease);
 
-  --animate-accordion-down: accordion-down var(--tw-duration, 200ms) ease-out;
-  --animate-accordion-up: accordion-up var(--tw-duration, 200ms) ease-out;
-  --animate-collapsible-down: collapsible-down var(--tw-duration, 200ms) ease-out;
-  --animate-collapsible-up: collapsible-up var(--tw-duration, 200ms) ease-out;
-  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
-
   @keyframes enter {
     from {
       opacity: var(--tw-enter-opacity, 1);
@@ -97,6 +91,11 @@
    * `interpolate-size: allow-keywords` to be set and is currently not widely
    * supported. See <https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size>
    */
+
+  --animate-accordion-down: accordion-down var(--tw-duration, 200ms) ease-out;
+  --animate-accordion-up: accordion-up var(--tw-duration, 200ms) ease-out;
+  --animate-collapsible-down: collapsible-down var(--tw-duration, 200ms) ease-out;
+  --animate-collapsible-up: collapsible-up var(--tw-duration, 200ms) ease-out;
 
   @keyframes accordion-down {
     from {
@@ -133,6 +132,8 @@
       height: 0;
     }
   }
+
+  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
 
   @keyframes caret-blink {
     0%,
