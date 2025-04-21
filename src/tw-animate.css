@@ -78,20 +78,6 @@
     }
   }
 
-  /*
-   * The `--radix-accordion-content-height` variable is set by Radix UI's
-   * Accordion component. The `--bits-accordion-content-height` variable is set
-   * by Bits' Accordion component. The `--radix-collapsible-content-height`
-   * variable is set by Radix UI's Collapsible component. The
-   * `--bits-collapsible-content-height` variable is set by Bits' Collapsible
-   * component.
-   *
-   * These variables are used to animate the height of the content when it is
-   * expanded or collapsed. `auto` is used as a fallback value but it requires
-   * `interpolate-size: allow-keywords` to be set and is currently not widely
-   * supported. See <https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size>
-   */
-
   --animate-accordion-down: accordion-down var(--tw-duration, 200ms) ease-out;
   --animate-accordion-up: accordion-up var(--tw-duration, 200ms) ease-out;
 
@@ -112,6 +98,20 @@
       height: 0;
     }
   }
+
+  /*
+  * The `--radix-accordion-content-height` variable is set by Radix UI's
+  * Accordion component. The `--bits-accordion-content-height` variable is set
+  * by Bits' Accordion component. The `--radix-collapsible-content-height`
+  * variable is set by Radix UI's Collapsible component. The
+  * `--bits-collapsible-content-height` variable is set by Bits' Collapsible
+  * component.
+  *
+  * These variables are used to animate the height of the content when it is
+  * expanded or collapsed. `auto` is used as a fallback value but it requires
+  * `interpolate-size: allow-keywords` to be set and is currently not widely
+  * supported. See <https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size>
+  */
 
   --animate-collapsible-down: collapsible-down var(--tw-duration, 200ms) ease-out;
   --animate-collapsible-up: collapsible-up var(--tw-duration, 200ms) ease-out;
