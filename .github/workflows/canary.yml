@@ -1,9 +1,11 @@
-name: Publish canary to npm with pnpm
+name: Release Package
 
 on:
   push:
     branches:
-      - main
+      - "**"
+  issue_comment:
+    types: [created]
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -11,68 +13,69 @@ permissions:
   id-token: write
   contents: write
   statuses: write
+  pull-requests: write
 
 jobs:
   release:
-    name: Release Canary
+    if: github.event_name == 'push' || (github.event_name == 'issue_comment' && contains(github.event.comment.body, 'release') && github.event.comment.user.login == github.repository_owner)
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repo
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
+      - name: Setup pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: latest
 
-      - name: Set up Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: latest
+          node-version: lts/*
           cache: pnpm
           registry-url: https://registry.npmjs.org
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build package
-        run: pnpm build
-
-      - name: Publish canary to npm
+      - name: Release Package
         run: |
-          # --- Check if package exists in npm registry ---
-          package_name=$(pnpx json -f package.json -a name)
-          npm view "$package_name" 2>/dev/null || {
-            echo "$package_name does not exist in the npm registry. Skipping publish."
-            exit 0
-          }
-          # --- Determine and release the next canary version ---
-          current_latest=$(pnpx json -f package.json -a version)
-          IFS='.' read -r major minor patch <<<"$current_latest"
-          upcoming_minor="$major.$((minor + 1)).0"
-          current_canary=$(npm view "$package_name" dist-tags.canary 2>/dev/null)
-          if [ -z "$current_canary" ]; then
-            release_version="$upcoming_minor-canary.0"
+          PACKAGE_NAME=$(pnpx json -f package.json -a name)
+          npm view "$PACKAGE_NAME" 2>/dev/null || { echo "$PACKAGE_NAME does not exist in the npm registry. Skipping publish."; exit 0; }
+          PACKAGE_VERSION=$(pnpx json -f package.json -a version)
+          VERSIONS=$(npm view $PACKAGE_NAME dist-tags --json)
+          LATEST_VERSION=$(echo $VERSIONS | pnpx json latest)
+            if [[ $GITHUB_EVENT_NAME == 'issue_comment' ]]; then
+            PR_NUMBER=$(echo "${{ github.event.issue.pull_request.url }}" | grep -o '[0-9]*$')
+            LATEST_COMMIT_SHA=$(curl -fsSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/commits" | bunx json -a sha | tail -n 1)
+            git checkout $LATEST_COMMIT_SHA
+            TAG="test"
+            RELEASE_VERSION="0.0.0-${LATEST_COMMIT_SHA:0:7}"
           else
-            IFS='.-' read -r canary_major canary_minor canary_patch canary_tag canary_version <<<"$current_canary"
-            release_version="$canary_major.$canary_minor.$canary_patch-canary.$((canary_version + 1))"
+            TAG="canary"
+            RELEASE_VERSION=$(pnpx semver $LATEST_VERSION -i minor)
+            TAGGED_VERSION=$(echo $VERSIONS | pnpx json $TAG)
+            RELEASE_VERSION=$([[ $TAGGED_VERSION == $RELEASE_VERSION* ]] && pnpx semver $TAGGED_VERSION -i prerelease || echo $RELEASE_VERSION-$TAG.0)
           fi
-          pnpx json -I -f package.json -e "this.version=\"$release_version\""
-          pnpm publish --provenance --access public --no-git-checks --tag canary
-          # --- Set the status with the release link ---
-          package_url="https://www.npmjs.com/package/$package_name/v/$release_version"
-          curl -L \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/comments" \
-            -d "{\"body\": \"Package released - [\`$package_name@$release_version\`]($package_url)\"}"
-          curl -L \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA" \
-            -d "{\"state\": \"success\", \"context\": \"Package released\", \"description\": \"$package_name@$release_version\", \"target_url\": \"$package_url\"}"
+
+          pnpx json -I -f package.json -e "this.version=\"$RELEASE_VERSION\""
+          pnpm install --frozen-lockfile
+          pnpm run build
+          pnpm publish --provenance --access public --no-git-checks --tag $TAG
+
+          PACKAGE_URL="https://www.npmjs.com/package/$PACKAGE_NAME/v/$RELEASE_VERSION"
+          if [[ $GITHUB_EVENT_NAME == 'issue_comment' ]]; then
+            curl -fsSL -X DELETE -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/comments/${{ github.event.comment.id }}" >/dev/null \
+              && echo "🟢 Releasing comment deleted!" || echo "🔴 Failed to delete releasing comment."
+            curl -fsSL -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" \
+              -d "{\"body\": \"Test package released - [\`$PACKAGE_NAME@$RELEASE_VERSION\`]($PACKAGE_URL)\"}" >/dev/null \
+              && echo "🟢 Release comment to PR added!" || echo "🔴 Failed to add release comment to PR."
+          elif [[ $GITHUB_EVENT_NAME == 'push' ]]; then
+            curl -fsSL -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/comments" \
+              -d "{\"body\": \"Package released - [\`$PACKAGE_NAME@$RELEASE_VERSION\`]($PACKAGE_URL)\"}" >/dev/null \
+              && echo "🟢 Release comment added!" || echo "🔴 Failed to add release comment."
+            curl -fsSL -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA" \
+              -d "{\"state\": \"success\", \"context\": \"Package released\", \"description\": \"$PACKAGE_NAME@$RELEASE_VERSION\", \"target_url\": \"$PACKAGE_URL\"}" >/dev/null \
+              && echo "🟢 Release status updated!" || echo "🔴 Failed to update release status."
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
