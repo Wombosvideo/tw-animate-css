@@ -183,9 +183,31 @@ import {
 
 Learn more about Reka's accordion primitive in the [Reka documentation][Reka_Docs].
 
+### Using Kobalte
+
+Kobalte automatically sets the `--kb-accordion-content-height` variable. Just use the headless accordion component primitive!
+
+```jsx
+import { Accordion } from "@kobalte/core/accordion";
+
+export default () => (
+  <Accordion.Root>
+    <Accordion.Item>
+      <Accordion.Header>
+        <Accordion.Trigger>...</Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Content>...</Accordion.Content>
+    </Accordion.Item>
+  </Accordion.Root>
+);
+```
+
+Learn more about Kobalte's accordion primitive in the [Kobalte documentation][Kobalte_Docs].
+
 <!-- Links -->
 
 [MDN_Interpolate_Size]: https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size
 [Radix_Docs]: https://radix-ui.com/docs/primitives/components/accordion#content
 [Bits_Docs]: https://bits-ui.com/docs/components/accordion#content
 [Reka_Docs]: https://reka-ui.com/docs/components/accordion#content
+[Kobalte_Docs]: https://kobalte.dev/docs/core/components/accordion#animating-content-size

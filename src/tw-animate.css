@@ -172,7 +172,10 @@
     to {
       height: var(
         --radix-accordion-content-height,
-        var(--bits-accordion-content-height, var(--reka-accordion-content-height, auto))
+        var(
+          --bits-accordion-content-height,
+          var(--reka-accordion-content-height, var(--kb-accordion-content-height, auto))
+        )
       );
     }
   }
@@ -181,7 +184,10 @@
     from {
       height: var(
         --radix-accordion-content-height,
-        var(--bits-accordion-content-height, var(--reka-accordion-content-height, auto))
+        var(
+          --bits-accordion-content-height,
+          var(--reka-accordion-content-height, var(--kb-accordion-content-height, auto))
+        )
       );
     }
     to {
@@ -196,7 +202,10 @@
     to {
       height: var(
         --radix-collapsible-content-height,
-        var(--bits-collapsible-content-height, var(--reka-collapsible-content-height, auto))
+        var(
+          --bits-collapsible-content-height,
+          var(--reka-collapsible-content-height, var(--kb-collapsible-content-height, auto))
+        )
       );
     }
   }
@@ -205,7 +214,10 @@
     from {
       height: var(
         --radix-collapsible-content-height,
-        var(--bits-collapsible-content-height, var(--reka-collapsible-content-height, auto))
+        var(
+          --bits-collapsible-content-height,
+          var(--reka-collapsible-content-height, var(--kb-collapsible-content-height, auto))
+        )
       );
     }
     to {
