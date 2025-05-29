@@ -88,23 +88,83 @@ animation: accordion-up var(--tw-duration, 200ms) ease-out;
 </tbody>
 </table>
 
+## `accordion-h-*`
+
+This utility sets the height of the accordion content. It is used to ensure that the accordion content has a defined height for the animations to work correctly.
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Styles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`accordion-h-<number>`
+
+</td>
+<td>
+
+```css
+--radix-accordion-content-height: calc(<number> * var(--spacing));
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`accordion-h-(<custom-property>)`
+
+</td>
+<td>
+
+```css
+--radix-accordion-content-height: var(<custom-property>);
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`accordion-h-[<value>]`
+
+</td>
+<td>
+
+```css
+--radix-accordion-content-height: <value>;
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Setting content height
 
-Until browser support for [`interpolate-size: allow-keywords`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the accordion content. You can set one of the following variables to the accordion content to set the height:
+Until browser support for [`interpolate-size: allow-keywords`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the accordion content.
+The following sections explain how to set the height of the accordion content using different methods.
 
-- `--radix-accordion-content-height` as in the [Radix documentation][Radix_Docs]
-- `--bits-accordion-content-height` as in the [BitsUI documentation][Bits_Docs]
-- `--reka-accordion-content-height` as in the [Reka documentation][Reka_Docs]
+### Using the `accordion-h-*` utility
 
-Check out the [setting content height](#setting-content-height) section for more information.
+You can use the `accordion-h-*` utility to set the height of the accordion content. This utility sets the `--radix-accordion-content-height` CSS variable, which is used by the animations.
 
-### HTML
+```html
+<div class="accordion-h-(--abc-accordion-content-height)">...</div>
+```
+
+### Using inline styles
 
 ```html
 <div style="--radix-accordion-content-height: 1.75em">...</div>
 ```
 
-### JavaScript
+### Using JavaScript
 
 ```js
 document

@@ -230,6 +230,16 @@
 
 /* Utility classes */
 
+@utility accordion-h-* {
+  --radix-accordion-content-height: calc(--value(number) * var(--spacing));
+  --radix-accordion-content-height: --value([ *]);
+}
+
+@utility collapsible-h-* {
+  --radix-collapsible-content-height: calc(--value(number) * var(--spacing));
+  --radix-collapsible-content-height: --value([ *]);
+}
+
 @utility animation-duration-* {
   --tw-animation-duration: calc(--value(number) * 1ms);
   --tw-animation-duration: --value(--animation-duration- *, [duration], "initial", [ *]);
