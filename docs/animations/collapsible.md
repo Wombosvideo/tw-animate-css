@@ -88,27 +88,87 @@ animation: collapsible-up var(--tw-duration, 200ms) ease-out;
 </tbody>
 </table>
 
+## `collapsible-h-*`
+
+This utility sets the height of the collapsible content. It is used to ensure that the collapsible content has a defined height for the animations to work correctly.
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Styles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`collapsible-h-<number>`
+
+</td>
+<td>
+
+```css
+--radix-collapsible-content-height: calc(<number> * var(--spacing));
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`collapsible-h-(<custom-property>)`
+
+</td>
+<td>
+
+```css
+--radix-collapsible-content-height: var(<custom-property>);
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`collapsible-h-[<value>]`
+
+</td>
+<td>
+
+```css
+--radix-collapsible-content-height: <value>;
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Setting content height
 
-Until browser support for [`interpolate-size: allow-keywords`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the collapsible content. You can set one of the following variables to the collapsible content to set the height:
+Until browser support for [`interpolate-size: allow-keywords`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the collapsible content.
+The following sections explain how to set the height of the collapsible content using different methods.
 
-- `--radix-collapsible-content-height` as in the [Radix documentation][Radix_Docs]
-- `--bits-collapsible-content-height` as in the [BitsUI documentation][Bits_Docs]
-- `--reka-collapsible-content-height` as in the [Reka documentation][Reka_Docs]
+### Using the `collapsible-h-*` utility
 
-Check out the [setting content height](#setting-content-height) section for more information.
+You can use the `collapsible-h-*` utility to set the height of the collapsible content. This utility sets the `--radix-collapsible-content-height` CSS variable, which is used by the animations.
 
-### HTML
+```html
+<div class="collapsible-h-(--abc-collapsible-content-height)">...</div>
+```
+
+### Using inline styles
 
 ```html
 <div style="--radix-collapsible-content-height: 1.75em">...</div>
 ```
 
-### JavaScript
+### Using JavaScript
 
 ```js
 document
-  .getElementById("faq-accordion-1")
+  .getElementById("faq-collapsible-1")
   .style.setProperty("--radix-collapsible-content-height", "1.75em");
 ```
 

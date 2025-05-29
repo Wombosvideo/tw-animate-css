@@ -137,15 +137,25 @@ To customize the animation parameters, use the following classes:
 
 ### Ready-to-Use Animations
 
-| Class                                  | Description                                                                                                                                                                              |
-| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`accordion-down`][Docs_Accordion]     | Accordion down animation. Requires one of `--radix-accordion-content-height`, `--bits-accordion-content-height` or `--reka-accordion-content-height` to be set to the content's height.  |
-| [`accordion-up`][Docs_Accordion]       | Accordion up animation. Requires one of `--radix-accordion-content-height`, `--bits-accordion-content-height` or `--reka-accordion-content-height` to be set to the content's height.    |
-| [`collapsible-down`][Docs_Collapsible] | Collapsible down animation. Requires `--radix-collapsible-content-height`, `--bits-collapsible-content-height` or `--reka-collapsible-content-height` to be set to the content's height. |
-| [`collapsible-up`][Docs_Collapsible]   | Collapsible up animation. Requires `--radix-collapsible-content-height`, `--bits-collapsible-content-height` or `--reka-collapsible-content-height` to be set to the content's height.   |
-| [`caret-blink`][Docs_Caret]            | Blinking animation for caret/cursor.                                                                                                                                                     |
+| Class                                  | Description                                                                                                      |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| [`accordion-down`][Docs_Accordion]     | Accordion down animation. Requires [`accordion-h-*`][Docs_AccordionHeight] to set to the content's height.       |
+| [`accordion-up`][Docs_Accordion]       | Accordion up animation. Requires [`accordion-h-*`][Docs_AccordionHeight] to set to the content's height.         |
+| [`collapsible-down`][Docs_Collapsible] | Collapsible down animation. Requires [`collapsible-h-*`][Docs_CollapsibleHeight] to set to the content's height. |
+| [`collapsible-up`][Docs_Collapsible]   | Collapsible up animation. Requires [`collapsible-h-*`][Docs_CollapsibleHeight] to set to the content's height.   |
+| [`caret-blink`][Docs_Caret]            | Blinking animation for caret/cursor.                                                                             |
 
-By the way, if you don't use some of the above animations, they will not be included in the final CSS file. This is because Tailwind CSS kind of does tree-shaking for you. So, if you don't use `accordion-down`, it won't be included in the final CSS file.
+#### Accordion and Collapsible Utilities
+
+For the accordion and collapsible animations to work correctly, you need to set the height of the content using the `accordion-h-*` or `collapsible-h-*` utilities. These utilities define the height of the content that will be animated.
+
+| Class             | Description                                                                                                                                                                                                 |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accordion-h-*`   | Sets the height of the accordion content to the given value. Possible values: Any `<number>` (spacing units) or any other `[<value>]`. This is required for the accordion animations to work correctly.     |
+| `collapsible-h-*` | Sets the height of the collapsible content to the given value. Possible values: Any `<number>` (spacing units) or any other `[<value>]`. This is required for the collapsible animations to work correctly. |
+
+> [!TIP]
+> If you don't use any of the above animations, they will not be included in the final CSS file. This is because Tailwind CSS kind of does tree-shaking for you. So, if you don't use `accordion-down`, it won't be included in the final CSS file.
 
 ## Examples
 
@@ -209,7 +219,9 @@ By the way, if you don't use some of the above animations, they will not be incl
 [Docs_Spin]: ./docs/transforms/rotate.md
 [Docs_Slide]: ./docs/transforms/translate.md
 [Docs_Accordion]: ./docs/animations/accordion.md
+[Docs_AccordionHeight]: ./docs/animations/accordion.md#accordion-h-
 [Docs_Collapsible]: ./docs/animations/collapsible.md
+[Docs_CollapsibleHeight]: ./docs/animations/collapsible.md#collapsible-h-
 [Docs_Caret]: ./docs/animations/caret-blink.md
 [MDN_Duration]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration
 [MDN_Ease]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function
