@@ -137,13 +137,13 @@ To customize the animation parameters, use the following classes:
 
 ### Ready-to-Use Animations
 
-| Class                                  | Description                                                                                                                                                                              |
-| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`accordion-down`][Docs_Accordion]     | Accordion down animation. Requires one of `--radix-accordion-content-height`, `--bits-accordion-content-height` or `--reka-accordion-content-height` to be set to the content's height.  |
-| [`accordion-up`][Docs_Accordion]       | Accordion up animation. Requires one of `--radix-accordion-content-height`, `--bits-accordion-content-height` or `--reka-accordion-content-height` to be set to the content's height.    |
-| [`collapsible-down`][Docs_Collapsible] | Collapsible down animation. Requires `--radix-collapsible-content-height`, `--bits-collapsible-content-height` or `--reka-collapsible-content-height` to be set to the content's height. |
-| [`collapsible-up`][Docs_Collapsible]   | Collapsible up animation. Requires `--radix-collapsible-content-height`, `--bits-collapsible-content-height` or `--reka-collapsible-content-height` to be set to the content's height.   |
-| [`caret-blink`][Docs_Caret]            | Blinking animation for caret/cursor.                                                                                                                                                     |
+| Class                                  | Description                                                                                                                                                                                                                 |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`accordion-down`][Docs_Accordion]     | Accordion down animation. Requires one of `--radix-accordion-content-height`, `--bits-accordion-content-height`, `--reka-accordion-content-height` or `--kb-accordion-content-height` to be set to the content's height.    |
+| [`accordion-up`][Docs_Accordion]       | Accordion up animation. Requires one of `--radix-accordion-content-height`, `--bits-accordion-content-height`, `--reka-accordion-content-height` or `--kb-accordion-content-height` to be set to the content's height.      |
+| [`collapsible-down`][Docs_Collapsible] | Collapsible down animation. Requires `--radix-collapsible-content-height`, `--bits-collapsible-content-height`, `--reka-collapsible-content-height` or `--kb-collapsible-content-height` to be set to the content's height. |
+| [`collapsible-up`][Docs_Collapsible]   | Collapsible up animation. Requires `--radix-collapsible-content-height`, `--bits-collapsible-content-height`, `--reka-collapsible-content-height` or `--kb-collapsible-content-height` to be set to the content's height.   |
+| [`caret-blink`][Docs_Caret]            | Blinking animation for caret/cursor.                                                                                                                                                                                        |
 
 By the way, if you don't use some of the above animations, they will not be included in the final CSS file. This is because Tailwind CSS kind of does tree-shaking for you. So, if you don't use `accordion-down`, it won't be included in the final CSS file.
 

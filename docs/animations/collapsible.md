@@ -165,9 +165,27 @@ import { CollapsibleContent, CollapsibleRoot, CollapsibleTrigger } from "reka-ui
 
 Learn more about Reka's collapsible primitive in the [Reka documentation][Reka_Docs].
 
+### Using Kobalte
+
+Kobalte automatically sets the `--kb-collapsible-content-height` variable. Just use the headless collapsible component primitive!
+
+```jsx
+import { Collapsible } from "@kobalte/core/collapsible";
+
+export default () => (
+  <Collapsible.Root>
+    <Collapsible.Trigger />
+    <Collapsible.Content />
+  </Collapsible.Root>
+);
+```
+
+Learn more about Kobalte's collapsible primitive in the [Kobalte documentation][Kobalte_Docs].
+
 <!-- Links -->
 
 [MDN_Interpolate_Size]: https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size
 [Radix_Docs]: https://www.radix-ui.com/primitives/docs/components/collapsible#content
 [Bits_Docs]: https://bits-ui.com/docs/components/collapsible#content
 [Reka_Docs]: https://reka-ui.com/docs/components/collapsible#content
+[Kobalte_Docs]: https://kobalte.dev/docs/core/components/collapsible#animating-content-size
