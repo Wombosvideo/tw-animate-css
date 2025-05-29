@@ -231,12 +231,12 @@
 /* Utility classes */
 
 @utility accordion-h-* {
-  --radix-accordion-content-height: calc(--value(integer) * var(--spacing));
+  --radix-accordion-content-height: calc(--value(number) * var(--spacing));
   --radix-accordion-content-height: --value([ *]);
 }
 
 @utility collapsible-h-* {
-  --radix-collapsible-content-height: calc(--value(integer) * var(--spacing));
+  --radix-collapsible-content-height: calc(--value(number) * var(--spacing));
   --radix-collapsible-content-height: --value([ *]);
 }
 
