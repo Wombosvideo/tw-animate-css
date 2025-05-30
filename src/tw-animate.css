@@ -378,6 +378,50 @@
   --tw-enter-translate-x: calc(--value(ratio) * 100%);
   --tw-enter-translate-x: --value(--translate- *, [percentage], [length]);
 }
+@utility slide-in-from-start {
+  &:dir(ltr) {
+    --tw-enter-translate-x: -100%;
+  }
+  &:dir(rtl) {
+    --tw-enter-translate-x: 100%;
+  }
+}
+@utility slide-in-from-start-* {
+  &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
+    --tw-enter-translate-x: calc(--value(integer) * var(--spacing) * -1);
+    --tw-enter-translate-x: calc(--value(--percentage- *, --percentage-translate- *) * -100%);
+    --tw-enter-translate-x: calc(--value(ratio) * -100%);
+    --tw-enter-translate-x: calc(--value(--translate- *, [percentage], [length]) * -1);
+  }
+  &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
+    --tw-enter-translate-x: calc(--value(integer) * var(--spacing));
+    --tw-enter-translate-x: calc(--value(--percentage- *, --percentage-translate- *) * 100%);
+    --tw-enter-translate-x: calc(--value(ratio) * 100%);
+    --tw-enter-translate-x: --value(--translate- *, [percentage], [length]);
+  }
+}
+@utility slide-in-from-end {
+  &:dir(ltr) {
+    --tw-enter-translate-x: 100%;
+  }
+  &:dir(rtl) {
+    --tw-enter-translate-x: -100%;
+  }
+}
+@utility slide-in-from-end-* {
+  &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
+    --tw-enter-translate-x: calc(--value(integer) * var(--spacing));
+    --tw-enter-translate-x: calc(--value(--percentage- *, --percentage-translate- *) * 100%);
+    --tw-enter-translate-x: calc(--value(ratio) * 100%);
+    --tw-enter-translate-x: --value(--translate- *, [percentage], [length]);
+  }
+  &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
+    --tw-enter-translate-x: calc(--value(integer) * var(--spacing) * -1);
+    --tw-enter-translate-x: calc(--value(--percentage- *, --percentage-translate- *) * -100%);
+    --tw-enter-translate-x: calc(--value(ratio) * -100%);
+    --tw-enter-translate-x: calc(--value(--translate- *, [percentage], [length]) * -1);
+  }
+}
 
 @utility slide-out-to-top {
   --tw-exit-translate-y: -100%;
@@ -414,4 +458,48 @@
   --tw-exit-translate-x: calc(--value(--percentage- *, --percentage-translate- *) * 100%);
   --tw-exit-translate-x: calc(--value(ratio) * 100%);
   --tw-exit-translate-x: --value(--translate- *, [percentage], [length]);
+}
+@utility slide-out-to-start {
+  &:dir(ltr) {
+    --tw-exit-translate-x: -100%;
+  }
+  &:dir(rtl) {
+    --tw-exit-translate-x: 100%;
+  }
+}
+@utility slide-out-to-start-* {
+  &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
+    --tw-exit-translate-x: calc(--value(integer) * var(--spacing) * -1);
+    --tw-exit-translate-x: calc(--value(--percentage- *, --percentage-translate- *) * -100%);
+    --tw-exit-translate-x: calc(--value(ratio) * -100%);
+    --tw-exit-translate-x: calc(--value(--translate- *, [percentage], [length]) * -1);
+  }
+  &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
+    --tw-exit-translate-x: calc(--value(integer) * var(--spacing));
+    --tw-exit-translate-x: calc(--value(--percentage- *, --percentage-translate- *) * 100%);
+    --tw-exit-translate-x: calc(--value(ratio) * 100%);
+    --tw-exit-translate-x: --value(--translate- *, [percentage], [length]);
+  }
+}
+@utility slide-out-to-end {
+  &:dir(ltr) {
+    --tw-exit-translate-x: 100%;
+  }
+  &:dir(rtl) {
+    --tw-exit-translate-x: -100%;
+  }
+}
+@utility slide-out-to-end-* {
+  &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
+    --tw-exit-translate-x: calc(--value(integer) * var(--spacing));
+    --tw-exit-translate-x: calc(--value(--percentage- *, --percentage-translate- *) * 100%);
+    --tw-exit-translate-x: calc(--value(ratio) * 100%);
+    --tw-exit-translate-x: --value(--translate- *, [percentage], [length]);
+  }
+  &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
+    --tw-exit-translate-x: calc(--value(integer) * var(--spacing) * -1);
+    --tw-exit-translate-x: calc(--value(--percentage- *, --percentage-translate- *) * -100%);
+    --tw-exit-translate-x: calc(--value(ratio) * -100%);
+    --tw-exit-translate-x: calc(--value(--translate- *, [percentage], [length]) * -1);
+  }
 }
