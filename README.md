@@ -97,7 +97,7 @@ This package is a replacement for [`tailwindcss-animate`][Original_Plugin_GitHub
 To keep the README concise, I'll define a few variables:
 
 - `<io>`: Specify the type of animation. This can be `in` for enter or `out` for exit animations.
-- `<dir>`: Specify the direction of the slide. This can be `in-from-top`, `in-from-bottom`, `in-from-left`, `in-from-right`, `out-to-top`, `out-to-bottom`, `out-to-left` or `out-to-right`.
+- `<dir>`: Specify the direction of the slide. This can be `in-from-top`, `in-from-bottom`, `in-from-left`, `in-from-right`, `in-from-start`, `in-from-end`, `out-to-top`, `out-to-bottom`, `out-to-left`, `out-to-right`, `out-to-start`, or `out-to-end`.
 - `*`: Specify a value to apply. See list of possible values.
 
 #### Base Classes

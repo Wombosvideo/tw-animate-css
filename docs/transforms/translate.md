@@ -281,6 +281,184 @@ Translate transforms can be used to slide elements in and out from different dir
 </tbody>
 </table>
 
+## `slide-in-from-start-*`
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Styles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`slide-in-from-start`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-enter-translate-x: -100%;
+}
+&:dir(rtl) {
+  --tw-enter-translate-x: 100%;
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-in-from-start-<number>`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-enter-translate-x: calc(<number> * var(--spacing) * -1);
+}
+&:dir(rtl) {
+  --tw-enter-translate-x: calc(<number> * var(--spacing));
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-in-from-start-(<custom-property>)`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-enter-translate-x: calc(var(<custom-property>) * -1);
+}
+&:dir(rtl) {
+  --tw-enter-translate-x: var(<custom-property>);
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-in-from-start-[<value>]`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-enter-translate-x: calc(<value> * -1);
+}
+&:dir(rtl) {
+  --tw-enter-translate-x: calc(<value>);
+}
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## `slide-in-from-end-*`
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Styles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`slide-in-from-end`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-enter-translate-x: 100%;
+}
+&:dir(rtl) {
+  --tw-enter-translate-x: -100%;
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-in-from-end-<number>`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-enter-translate-x: calc(<number> * var(--spacing));
+}
+&:dir(rtl) {
+  --tw-enter-translate-x: calc(<number> * var(--spacing) * -1);
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-in-from-end-(<custom-property>)`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-enter-translate-x: var(<custom-property>);
+}
+&:dir(rtl) {
+  --tw-enter-translate-x: calc(var(<custom-property>) * -1);
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-in-from-end-[<value>]`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-enter-translate-x: calc(<value>);
+}
+&:dir(rtl) {
+  --tw-enter-translate-x: calc(<value> * -1);
+}
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ## `slide-out-to-top-*`
 
 <table>
@@ -550,6 +728,184 @@ Translate transforms can be used to slide elements in and out from different dir
 
 ```css
 --tw-exit-translate-x: <value>;
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## `slide-out-to-start-*`
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Styles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`slide-out-to-start`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-exit-translate-x: -100%;
+}
+&:dir(rtl) {
+  --tw-exit-translate-x: 100%;
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-out-to-start-<number>`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-exit-translate-x: calc(<number> * var(--spacing) * -1);
+}
+&:dir(rtl) {
+  --tw-exit-translate-x: calc(<number> * var(--spacing));
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-out-to-start-(<custom-property>)`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-exit-translate-x: calc(var(<custom-property>) * -1);
+}
+&:dir(rtl) {
+  --tw-exit-translate-x: var(<custom-property>);
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-out-to-start-[<value>]`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-exit-translate-x: calc(<value> * -1);
+}
+&:dir(rtl) {
+  --tw-exit-translate-x: calc(<value>);
+}
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## `slide-out-to-end-*`
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Styles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`slide-out-to-end`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-exit-translate-x: 100%;
+}
+&:dir(rtl) {
+  --tw-exit-translate-x: -100%;
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-out-to-end-<number>`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-exit-translate-x: calc(<number> * var(--spacing));
+}
+&:dir(rtl) {
+  --tw-exit-translate-x: calc(<number> * var(--spacing) * -1);
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-out-to-end-(<custom-property>)`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-exit-translate-x: var(<custom-property>);
+}
+&:dir(rtl) {
+  --tw-exit-translate-x: calc(var(<custom-property>) * -1);
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slide-out-to-end-[<value>]`
+
+</td>
+<td>
+
+```css
+&:dir(ltr) {
+  --tw-exit-translate-x: calc(<value>);
+}
+&:dir(rtl) {
+  --tw-exit-translate-x: calc(<value> * -1);
+}
 ```
 
 </td>
