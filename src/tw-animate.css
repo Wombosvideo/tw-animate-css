@@ -7,9 +7,28 @@
 
 :root {
   /* @property declarations for animation variables, to prevent inheritance */
+  @property --tw-animation-delay {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0s;
+  }
+
+  @property --tw-animation-direction {
+    syntax: "*";
+    inherits: false;
+    initial-value: normal;
+  }
+
   @property --tw-animation-duration {
     syntax: "*";
     inherits: false;
+    /* does not have an initial value in order for the `--tw-duration` variable to work */
+  }
+
+  @property --tw-animation-fill-mode {
+    syntax: "*";
+    inherits: false;
+    initial-value: forwards;
   }
 
   @property --tw-enter-opacity {
@@ -71,6 +90,12 @@
     inherits: false;
     initial-value: 0;
   }
+
+  @property --tw-repeat {
+    syntax: "*";
+    inherits: false;
+    initial-value: 1;
+  }
 }
 
 @theme inline {
@@ -125,8 +150,12 @@
 
   /* Animations and keyframes */
 
-  --animate-in: enter var(--tw-animation-duration, var(--tw-duration, 150ms)) var(--tw-ease, ease);
-  --animate-out: exit var(--tw-animation-duration, var(--tw-duration, 150ms)) var(--tw-ease, ease);
+  --animate-in: enter var(--tw-animation-duration, var(--tw-duration, 150ms)) var(--tw-ease, ease)
+    var(--tw-animation-delay, 0s) var(--tw-repeat, 1) var(--tw-animation-direction, normal)
+    var(--tw-animation-fill-mode, forwards);
+  --animate-out: exit var(--tw-animation-duration, var(--tw-duration, 150ms)) var(--tw-ease, ease)
+    var(--tw-animation-delay, 0s) var(--tw-repeat, 1) var(--tw-animation-direction, normal)
+    var(--tw-animation-fill-mode, forwards);
 
   @keyframes enter {
     from {
@@ -252,18 +281,23 @@
 @utility delay-* {
   animation-delay: calc(--value(number) * 1ms);
   animation-delay: --value(--animation-delay- *, [duration], "initial", [ *]);
+  --tw-animation-delay: calc(--value(number) * 1ms);
+  --tw-animation-delay: --value(--animation-delay- *, [duration], "initial", [ *]);
 }
 
 @utility repeat-* {
   animation-iteration-count: --value(--animation-repeat- *, number, "initial", [ *]);
+  --tw-repeat: --value(--animation-repeat- *, number, "initial", [ *]);
 }
 
 @utility direction-* {
   animation-direction: --value(--animation-direction- *, "initial", [ *]);
+  --tw-animation-direction: --value(--animation-direction- *, "initial", [ *]);
 }
 
 @utility fill-mode-* {
   animation-fill-mode: --value(--animation-fill-mode- *, "initial", [ *]);
+  --tw-animation-fill-mode: --value(--animation-fill-mode- *, "initial", [ *]);
 }
 
 @utility running {
