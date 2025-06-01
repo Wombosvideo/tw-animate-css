@@ -31,6 +31,12 @@
     initial-value: forwards;
   }
 
+  @property --tw-animation-iteration-count {
+    syntax: "*";
+    inherits: false;
+    initial-value: 1;
+  }
+
   @property --tw-enter-opacity {
     syntax: "*";
     inherits: false;
@@ -90,12 +96,6 @@
     inherits: false;
     initial-value: 0;
   }
-
-  @property --tw-repeat {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
 }
 
 @theme inline {
@@ -151,11 +151,11 @@
   /* Animations and keyframes */
 
   --animate-in: enter var(--tw-animation-duration, var(--tw-duration, 150ms)) var(--tw-ease, ease)
-    var(--tw-animation-delay, 0s) var(--tw-repeat, 1) var(--tw-animation-direction, normal)
-    var(--tw-animation-fill-mode, forwards);
+    var(--tw-animation-delay, 0s) var(--tw-animation-iteration-count, 1)
+    var(--tw-animation-direction, normal) var(--tw-animation-fill-mode, forwards);
   --animate-out: exit var(--tw-animation-duration, var(--tw-duration, 150ms)) var(--tw-ease, ease)
-    var(--tw-animation-delay, 0s) var(--tw-repeat, 1) var(--tw-animation-direction, normal)
-    var(--tw-animation-fill-mode, forwards);
+    var(--tw-animation-delay, 0s) var(--tw-animation-iteration-count, 1)
+    var(--tw-animation-direction, normal) var(--tw-animation-fill-mode, forwards);
 
   @keyframes enter {
     from {
@@ -287,7 +287,7 @@
 
 @utility repeat-* {
   animation-iteration-count: --value(--animation-repeat- *, number, "initial", [ *]);
-  --tw-repeat: --value(--animation-repeat- *, number, "initial", [ *]);
+  --tw-animation-iteration-count: --value(--animation-repeat- *, number, "initial", [ *]);
 }
 
 @utility direction-* {
