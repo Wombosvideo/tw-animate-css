@@ -159,6 +159,7 @@
 
   @keyframes enter {
     from {
+      display: var(--tw-enter-display,);
       opacity: var(--tw-enter-opacity, 1);
       transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0)
         scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1))
@@ -168,6 +169,7 @@
 
   @keyframes exit {
     to {
+      display: var(--tw-exit-hidden,);
       opacity: var(--tw-exit-opacity, 1);
       transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0)
         scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1))
@@ -324,6 +326,14 @@
 @utility fade-out-* {
   --tw-exit-opacity: calc(--value(number) / 100);
   --tw-exit-opacity: --value(--percentage- *, [ *]);
+}
+
+@utility display-in {
+  --tw-enter-display: none;
+}
+
+@utility display-out {
+  --tw-exit-display: none;
 }
 
 @utility zoom-in {
