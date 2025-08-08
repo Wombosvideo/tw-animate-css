@@ -1,5 +1,6 @@
 /**
  * TailwindCSS v4.0 compatible replacement for `tailwindcss-animate`.
+ * Modified to add blur-in and blur-out support.
  *
  * @author Luca Bosin <https://github.com/Wombosvideo>
  * @license MIT
@@ -96,6 +97,19 @@
     inherits: false;
     initial-value: 0;
   }
+
+  /* Adicionado para suporte a blur */
+  @property --tw-enter-blur {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0;
+  }
+
+  @property --tw-exit-blur {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0;
+  }
 }
 
 @theme inline {
@@ -163,6 +177,7 @@
       transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0)
         scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1))
         rotate(var(--tw-enter-rotate, 0));
+      filter: blur(var(--tw-enter-blur, 0));
     }
   }
 
@@ -172,18 +187,9 @@
       transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0)
         scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1))
         rotate(var(--tw-exit-rotate, 0));
+      filter: blur(var(--tw-exit-blur, 0));
     }
   }
-
-  /*
-  * Radix, Bits UI and Reka UI utilize CSS variables to define the height of Accordion and Collapsible
-  * content during open/close animations. The `--radix/bits/reka-accordion-content-height` variables
-  * control the height of Accordion content, while `collapsible` variables are used for Collapsibles.
-  *
-  * The fallback value `auto` is used here, but it depends on the `interpolate-size: allow-keywords`
-  * property, which currently has limited browser support. For more details, see: 
-  * <https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size>
-  */
 
   --animate-accordion-down: accordion-down var(--tw-animation-duration, var(--tw-duration, 200ms))
     var(--tw-ease, ease-out) var(--tw-animation-delay, 0s) var(--tw-animation-iteration-count, 1)
@@ -365,7 +371,7 @@
 @utility spin-in-* {
   --tw-enter-rotate: calc(--value(number) * 1deg);
   --tw-enter-rotate: calc(--value(ratio) * 360deg);
-  --tw-enter-rotate: --value(--rotate-*, [*]);
+  --tw-enter-rotate: --value(--rotate-*, [*]);  
 }
 @utility -spin-in {
   --tw-enter-rotate: -30deg;
