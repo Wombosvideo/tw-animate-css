@@ -1,6 +1,5 @@
 /**
  * TailwindCSS v4.0 compatible replacement for `tailwindcss-animate`.
- * Modified to add blur-in and blur-out support.
  *
  * @author Luca Bosin <https://github.com/Wombosvideo>
  * @license MIT
@@ -98,7 +97,6 @@
     initial-value: 0;
   }
 
-  /* Adicionado para suporte a blur */
   @property --tw-enter-blur {
     syntax: "*";
     inherits: false;
