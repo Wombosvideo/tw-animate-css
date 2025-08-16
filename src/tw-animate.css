@@ -293,6 +293,7 @@
   --tw-animation-delay: calc(--value(number) * 1ms);
   --tw-animation-delay: --value(--animation-delay-*, [duration], "initial", [*]);
 }
+
 @utility repeat-* {
   animation-iteration-count: --value(--animation-repeat-*, number, "initial", [*]);
   --tw-animation-iteration-count: --value(--animation-repeat-*, number, "initial", [*]);
