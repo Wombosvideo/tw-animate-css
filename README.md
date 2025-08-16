@@ -124,16 +124,18 @@ To customize the animation parameters, use the following classes:
 
 #### Transform Classes
 
-| Class                         | Description                                                                                                                      |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| [`fade-<io>`][Docs_Fade]      | Fades the element in from or out to `opacity: 0`.                                                                                |
-| [`fade-<io>-*`][Docs_Fade]    | Fades the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.  |
-| [`zoom-<io>`][Docs_Zoom]      | Zooms the element in from or out to `scale3D(0,0,0)`.                                                                            |
-| [`zoom-<io>-*`][Docs_Zoom]    | Zooms the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.  |
-| [`spin-<io>`][Docs_Spin]      | Spins the element in from or out to `rotate(30deg)`.                                                                             |
-| [`spin-<io>-*`][Docs_Spin]    | Spins the element in from or out to the specified value. Possible values: Any `<number>` (degrees) or any other `[<value>]`.     |
-| [`slide-<dir>`][Docs_Slide]   | Slides the element in from or out to the specified direction (`100%`).                                                           |
-| [`slide-<dir>-*`][Docs_Slide] | Slides the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`. |
+| Class                         | Description                                                                                                                                                    |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`blur-in-*`][Docs_Blur]      | Applies a blur effect on the element when it enters. Possible values: `blur-in`, `blur-in-<number>`, `blur-in-(<custom-property>)`, or `blur-in-[<value>]`.    |
+| [`blur-out-*`][Docs_Blur]     | Applies a blur effect on the element when it exits. Possible values: `blur-out`, `blur-out-<number>`, `blur-out-(<custom-property>)`, or `blur-out-[<value>]`. |
+| [`fade-<io>`][Docs_Fade]      | Fades the element in from or out to `opacity: 0`.                                                                                                              |
+| [`fade-<io>-*`][Docs_Fade]    | Fades the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.                                |
+| [`zoom-<io>`][Docs_Zoom]      | Zooms the element in from or out to `scale3D(0,0,0)`.                                                                                                          |
+| [`zoom-<io>-*`][Docs_Zoom]    | Zooms the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.                                |
+| [`spin-<io>`][Docs_Spin]      | Spins the element in from or out to `rotate(30deg)`.                                                                                                           |
+| [`spin-<io>-*`][Docs_Spin]    | Spins the element in from or out to the specified value. Possible values: Any `<number>` (degrees) or any other `[<value>]`.                                   |
+| [`slide-<dir>`][Docs_Slide]   | Slides the element in from or out to the specified direction (`100%`).                                                                                         |
+| [`slide-<dir>-*`][Docs_Slide] | Slides the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.                               |
 
 ### Ready-to-Use Animations
 
@@ -204,6 +206,7 @@ By the way, if you don't use some of the above animations, they will not be incl
 [Docs_Running]: ./docs/parameters/animation-play-state.md#running
 [Docs_Paused]: ./docs/parameters/animation-play-state.md#paused
 [Docs_Play_State]: ./docs/parameters/animation-play-state.md#play-state-
+[Docs_Blur]: ./docs/transforms/blur.md
 [Docs_Fade]: ./docs/transforms/opacity.md
 [Docs_Zoom]: ./docs/transforms/scale.md
 [Docs_Spin]: ./docs/transforms/rotate.md

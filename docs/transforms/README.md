@@ -9,6 +9,10 @@ In the context of animations, transforms define the starting and ending styles o
 
 | Class                                                 | Description                                                                                                                                                                                                               |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`blur-in`][Docs_Blur_In]                             | Blurs the element in from `20px`.                                                                                                                                                                                         |
+| [`blur-in-*`][Docs_Blur_In]                           | Blurs the element in from the specified value. Possible values: Any `<number>` (pixels) or any other `[<value>]`.                                                                                                         |
+| [`blur-out`][Docs_Blur_Out]                           | Blurs the element out to `20px`.                                                                                                                                                                                          |
+| [`blur-out-*`][Docs_Blur_Out]                         | Blurs the element out to the specified value. Possible values: Any `<number>` (pixels) or any other `[<value>]`.                                                                                                          |
 | [`fade-in`][Docs_Fade_In]                             | Fades the element in from `opacity: 0`.                                                                                                                                                                                   |
 | [`fade-in-*`][Docs_Fade_In]                           | Fades the element in from the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.                                                                                                     |
 | [`fade-out`][Docs_Fade_Out]                           | Fades the element out to `opacity: 0`.                                                                                                                                                                                    |
@@ -50,6 +54,8 @@ In the context of animations, transforms define the starting and ending styles o
 
 [Animate_in]: ../animations/in-out.md#animate-in
 [Animate_out]: ../animations/in-out.md#animate-out
+[Docs_Blur_In]: ./blur.md#blur-in-
+[Docs_Blur_Out]: ./blur.md#blur-out-
 [Docs_Fade_In]: ./opacity.md#fade-in-
 [Docs_Fade_Out]: ./opacity.md#fade-out-
 [Docs_Zoom_In]: ./scale.md#zoom-in-
