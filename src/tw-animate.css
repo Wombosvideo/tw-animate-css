@@ -37,6 +37,12 @@
     initial-value: 1;
   }
 
+  @property --tw-enter-blur {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0;
+  }
+
   @property --tw-enter-opacity {
     syntax: "*";
     inherits: false;
@@ -67,6 +73,12 @@
     initial-value: 0;
   }
 
+  @property --tw-exit-blur {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0;
+  }
+
   @property --tw-exit-opacity {
     syntax: "*";
     inherits: false;
@@ -92,18 +104,6 @@
   }
 
   @property --tw-exit-translate-y {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-enter-blur {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-exit-blur {
     syntax: "*";
     inherits: false;
     initial-value: 0;
@@ -277,21 +277,7 @@
 }
 
 /* Utility classes */
-@utility blur-in {
-  --tw-enter-blur: 20px;
-}
-@utility blur-in-* {
-  --tw-enter-blur: calc(--value(number) * 1px);
-  --tw-enter-blur: --value(--blur-*, [*]);
-}
 
-@utility blur-out {
-  --tw-exit-blur: 20px;
-}
-@utility blur-out-* {
-  --tw-exit-blur: calc(--value(number) * 1px);
-  --tw-exit-blur: --value(--blur-*, [*]);
-}
 @utility animation-duration-* {
   --tw-animation-duration: calc(--value(number) * 1ms);
   --tw-animation-duration: --value(--animation-duration-*, [duration], "initial", [*]);
@@ -328,6 +314,22 @@
 }
 @utility play-state-* {
   animation-play-state: --value("initial", [*]);
+}
+
+@utility blur-in {
+  --tw-enter-blur: 20px;
+}
+@utility blur-in-* {
+  --tw-enter-blur: calc(--value(number) * 1px);
+  --tw-enter-blur: --value(--blur-*, [*]);
+}
+
+@utility blur-out {
+  --tw-exit-blur: 20px;
+}
+@utility blur-out-* {
+  --tw-exit-blur: calc(--value(number) * 1px);
+  --tw-exit-blur: --value(--blur-*, [*]);
 }
 
 @utility fade-in {
