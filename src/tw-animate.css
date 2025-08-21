@@ -212,7 +212,8 @@
         --radix-accordion-content-height,
         var(
           --bits-accordion-content-height,
-          var(--reka-accordion-content-height, var(--kb-accordion-content-height, auto))
+          var(--reka-accordion-content-height, 
+          var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto)))
         )
       );
     }
@@ -224,7 +225,8 @@
         --radix-accordion-content-height,
         var(
           --bits-accordion-content-height,
-          var(--reka-accordion-content-height, var(--kb-accordion-content-height, auto))
+          var(--reka-accordion-content-height, 
+          var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto)))
         )
       );
     }
