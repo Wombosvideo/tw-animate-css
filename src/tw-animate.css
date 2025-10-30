@@ -213,7 +213,8 @@
         var(
           --bits-accordion-content-height,
           var(--reka-accordion-content-height, 
-          var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto)))
+          var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto))),
+          var(--height),
         )
       );
     }
@@ -226,7 +227,8 @@
         var(
           --bits-accordion-content-height,
           var(--reka-accordion-content-height, 
-          var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto)))
+          var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto))),
+          var(--height)
         )
       );
     }
@@ -245,7 +247,8 @@
         var(
           --bits-collapsible-content-height,
           var(--reka-collapsible-content-height, var(--kb-collapsible-content-height, auto))
-        )
+        ),
+        var(--height)
       );
     }
   }
@@ -257,7 +260,8 @@
         var(
           --bits-collapsible-content-height,
           var(--reka-collapsible-content-height, var(--kb-collapsible-content-height, auto))
-        )
+        ),
+        var(--height)
       );
     }
     to {
