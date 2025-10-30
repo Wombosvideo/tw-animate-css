@@ -35,7 +35,8 @@ animation: collapsible-down var(--tw-duration, 200ms) ease-out;
       --radix-collapsible-content-height,
       var(
         --bits-collapsible-content-height,
-        var(--reka-collapsible-content-height, var(--kb-collapsible-content-height, auto))
+        var(--reka-collapsible-content-height, var(--kb-collapsible-content-height, auto)),
+        var(--height)
       )
     );
   }
@@ -79,7 +80,8 @@ animation: collapsible-up var(--tw-duration, 200ms) ease-out;
       --radix-collapsible-content-height,
       var(
         --bits-collapsible-content-height,
-        var(--reka-collapsible-content-height, var(--kb-collapsible-content-height, auto))
+        var(--reka-collapsible-content-height, var(--kb-collapsible-content-height, auto)),
+        var(--height)
       )
     );
   }
@@ -187,6 +189,25 @@ export default () => (
 
 Learn more about Kobalte's collapsible primitive in the [Kobalte documentation][Kobalte_Docs].
 
+### Using Ark UI (React)
+
+Ark UI automatically sets the `--height` variable. Just use the headless collapsible component primitive!
+
+```jsx
+import { Collapsible } from '@ark-ui/react/collapsible'
+
+export default () => (
+  <Collapsible.Root>
+    <Collapsible.Trigger>
+      <Collapsible.Indicator />
+    </Collapsible.Trigger>
+    <Collapsible.Content />
+  </Collapsible.Root>
+)
+```
+
+Learn more about Ark UI's accordion primitive in the [Ark UI documentation][Ark_UI_Docs].
+
 <!-- Links -->
 
 [MDN_Interpolate_Size]: https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size
@@ -194,3 +215,4 @@ Learn more about Kobalte's collapsible primitive in the [Kobalte documentation][
 [Bits_Docs]: https://bits-ui.com/docs/components/collapsible#content
 [Reka_Docs]: https://reka-ui.com/docs/components/collapsible#content
 [Kobalte_Docs]: https://kobalte.dev/docs/core/components/collapsible#animating-content-size
+[Ark_UI_Docs]: https://ark-ui.com/docs/components/collapsible#animating-the-content
