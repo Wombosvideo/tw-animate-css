@@ -33,7 +33,10 @@ animation: collapsible-down var(--tw-duration, 200ms) ease-out;
   to {
     height: var(
       --radix-collapsible-content-height,
-      var(--bits-collapsible-content-height, var(--reka-collapsible-content-height, auto))
+      var(
+        --bits-collapsible-content-height,
+        var(--reka-collapsible-content-height, var(--kb-collapsible-content-height, auto))
+      )
     );
   }
 }
@@ -74,7 +77,10 @@ animation: collapsible-up var(--tw-duration, 200ms) ease-out;
   from {
     height: var(
       --radix-collapsible-content-height,
-      var(--bits-collapsible-content-height, var(--reka-collapsible-content-height, auto))
+      var(
+        --bits-collapsible-content-height,
+        var(--reka-collapsible-content-height, var(--kb-collapsible-content-height, auto))
+      )
     );
   }
   to {
@@ -147,8 +153,12 @@ This utility sets the height of the collapsible content. It is used to ensure th
 
 ## Setting content height
 
-Until browser support for [`interpolate-size: allow-keywords`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the collapsible content.
-The following sections explain how to set the height of the collapsible content using different methods.
+Until browser support for [`interpolate-size: allow-keywords`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the collapsible content. You can set one of the following variables to the collapsible content to set the height:
+
+- `--radix-collapsible-content-height` as in the [Radix documentation][Radix_Docs]
+- `--bits-collapsible-content-height` as in the [BitsUI documentation][Bits_Docs]
+- `--reka-collapsible-content-height` as in the [Reka documentation][Reka_Docs]
+- `--kb-collapsible-content-height` as in the [Kobalte documentation][Kobalte_Docs]
 
 ### Using the `collapsible-h-*` utility
 
@@ -158,13 +168,13 @@ You can use the `collapsible-h-*` utility to set the height of the collapsible c
 <div class="collapsible-h-(--abc-collapsible-content-height)">...</div>
 ```
 
-### Using inline styles
+### HTML
 
 ```html
 <div style="--radix-collapsible-content-height: 1.75em">...</div>
 ```
 
-### Using JavaScript
+### JavaScript
 
 ```js
 document
@@ -199,8 +209,8 @@ BitsUI automatically sets the `--bits-collapsible-content-height` variable. Just
 </script>
 
 <Collapsible.Root>
-	<Collapsible.Trigger />
-	<Collapsible.Content />
+<Collapsible.Trigger />
+<Collapsible.Content />
 </Collapsible.Root>
 ```
 
@@ -225,9 +235,27 @@ import { CollapsibleContent, CollapsibleRoot, CollapsibleTrigger } from "reka-ui
 
 Learn more about Reka's collapsible primitive in the [Reka documentation][Reka_Docs].
 
+### Using Kobalte (SolidJS)
+
+Kobalte automatically sets the `--kb-collapsible-content-height` variable. Just use the headless collapsible component primitive!
+
+```jsx
+import { Collapsible } from "@kobalte/core/collapsible";
+
+export default () => (
+  <Collapsible.Root>
+    <Collapsible.Trigger />
+    <Collapsible.Content />
+  </Collapsible.Root>
+);
+```
+
+Learn more about Kobalte's collapsible primitive in the [Kobalte documentation][Kobalte_Docs].
+
 <!-- Links -->
 
 [MDN_Interpolate_Size]: https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size
 [Radix_Docs]: https://www.radix-ui.com/primitives/docs/components/collapsible#content
 [Bits_Docs]: https://bits-ui.com/docs/components/collapsible#content
 [Reka_Docs]: https://reka-ui.com/docs/components/collapsible#content
+[Kobalte_Docs]: https://kobalte.dev/docs/core/components/collapsible#animating-content-size
