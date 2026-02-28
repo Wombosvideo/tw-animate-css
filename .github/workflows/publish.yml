@@ -12,10 +12,12 @@ concurrency:
 
 permissions:
   id-token: write
+  contents: read
 
 jobs:
   publish:
     name: Publish
+    environment: release
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +30,7 @@ jobs:
         uses: pnpm/action-setup@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: latest
           cache: pnpm
@@ -41,7 +43,12 @@ jobs:
         run: pnpm build
 
       - name: Prepare main package README
-        run: sed -i 's/\[!NOTE\]/ℹ️ **NOTE**  /g' README.md
+        run: |
+          sed -i 's/\[!NOTE\]/ℹ️ **NOTE**  /g' README.md
+          sed -i 's/\[!TIP\]/💡 **TIP**  /g' README.md
+          sed -i 's/\[!IMPORTANT\]/❗ **IMPORTANT**  /g' README.md
+          sed -i 's/\[!WARNING\]/⚠️ **WARNING**  /g' README.md
+          sed -i 's/\[!CAUTION\]/⛔ **CAUTION**  /g' README.md
 
       - name: Publish main package to npm
         run: pnpm publish --provenance --access public --no-git-checks
