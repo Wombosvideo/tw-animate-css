@@ -11,6 +11,9 @@ A collection of Tailwind CSS v4.0 utilities for creating beautiful animations. I
 
 This package is a replacement for [`tailwindcss-animate`][Original_Plugin_GitHub]. It embraces the new [CSS-first architecture][TailwindCSS_Custom_Utilities], providing a pure CSS solution for adding animation capabilities to your Tailwind CSS project without relying on the legacy JavaScript plugin system or having to define all keywords from scratch.
 
+> [!WARNING]
+> The upcoming release v2.0.0 will include breaking changes. A migration script and a guide will be provided to help you transition smoothly.
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
@@ -97,7 +100,7 @@ This package is a replacement for [`tailwindcss-animate`][Original_Plugin_GitHub
 To keep the README concise, I'll define a few variables:
 
 - `<io>`: Specify the type of animation. This can be `in` for enter or `out` for exit animations.
-- `<dir>`: Specify the direction of the slide. This can be `in-from-top`, `in-from-bottom`, `in-from-left`, `in-from-right`, `out-to-top`, `out-to-bottom`, `out-to-left` or `out-to-right`.
+- `<dir>`: Specify the direction of the slide. This can be `in-from-top`, `in-from-bottom`, `in-from-left`, `in-from-right`, `in-from-start`, `in-from-end`, `out-to-top`, `out-to-bottom`, `out-to-left`, `out-to-right`, `out-to-start`, or `out-to-end`.
 - `*`: Specify a value to apply. See list of possible values.
 
 #### Base Classes
@@ -124,26 +127,28 @@ To customize the animation parameters, use the following classes:
 
 #### Transform Classes
 
-| Class                         | Description                                                                                                                      |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| [`fade-<io>`][Docs_Fade]      | Fades the element in from or out to `opacity: 0`.                                                                                |
-| [`fade-<io>-*`][Docs_Fade]    | Fades the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.  |
-| [`zoom-<io>`][Docs_Zoom]      | Zooms the element in from or out to `scale3D(0,0,0)`.                                                                            |
-| [`zoom-<io>-*`][Docs_Zoom]    | Zooms the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.  |
-| [`spin-<io>`][Docs_Spin]      | Spins the element in from or out to `rotate(30deg)`.                                                                             |
-| [`spin-<io>-*`][Docs_Spin]    | Spins the element in from or out to the specified value. Possible values: Any `<number>` (degrees) or any other `[<value>]`.     |
-| [`slide-<dir>`][Docs_Slide]   | Slides the element in from or out to the specified direction (`100%`).                                                           |
-| [`slide-<dir>-*`][Docs_Slide] | Slides the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`. |
+| Class                         | Description                                                                                                                                                    |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`blur-in-*`][Docs_Blur]      | Applies a blur effect on the element when it enters. Possible values: `blur-in`, `blur-in-<number>`, `blur-in-(<custom-property>)`, or `blur-in-[<value>]`.    |
+| [`blur-out-*`][Docs_Blur]     | Applies a blur effect on the element when it exits. Possible values: `blur-out`, `blur-out-<number>`, `blur-out-(<custom-property>)`, or `blur-out-[<value>]`. |
+| [`fade-<io>`][Docs_Fade]      | Fades the element in from or out to `opacity: 0`.                                                                                                              |
+| [`fade-<io>-*`][Docs_Fade]    | Fades the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.                                |
+| [`zoom-<io>`][Docs_Zoom]      | Zooms the element in from or out to `scale3D(0,0,0)`.                                                                                                          |
+| [`zoom-<io>-*`][Docs_Zoom]    | Zooms the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.                                |
+| [`spin-<io>`][Docs_Spin]      | Spins the element in from or out to `rotate(30deg)`.                                                                                                           |
+| [`spin-<io>-*`][Docs_Spin]    | Spins the element in from or out to the specified value. Possible values: Any `<number>` (degrees) or any other `[<value>]`.                                   |
+| [`slide-<dir>`][Docs_Slide]   | Slides the element in from or out to the specified direction (`100%`).                                                                                         |
+| [`slide-<dir>-*`][Docs_Slide] | Slides the element in from or out to the specified value. Possible values: Any `<number>` (percentage) or any other `[<value>]`.                               |
 
 ### Ready-to-Use Animations
 
-| Class                                  | Description                                                                                                      |
-| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| [`accordion-down`][Docs_Accordion]     | Accordion down animation. Requires [`accordion-h-*`][Docs_AccordionHeight] to set to the content's height.       |
-| [`accordion-up`][Docs_Accordion]       | Accordion up animation. Requires [`accordion-h-*`][Docs_AccordionHeight] to set to the content's height.         |
-| [`collapsible-down`][Docs_Collapsible] | Collapsible down animation. Requires [`collapsible-h-*`][Docs_CollapsibleHeight] to set to the content's height. |
-| [`collapsible-up`][Docs_Collapsible]   | Collapsible up animation. Requires [`collapsible-h-*`][Docs_CollapsibleHeight] to set to the content's height.   |
-| [`caret-blink`][Docs_Caret]            | Blinking animation for caret/cursor.                                                                             |
+| Class                                  | Description                                                                                                                                                                                              |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`accordion-down`][Docs_Accordion]     | Accordion down animation. Requires `--radix-accordion-content-height` or one of the [other accordion content height variables][Docs_Accordion_Content_Height] to be set to the content's height.         |
+| [`accordion-up`][Docs_Accordion]       | Accordion up animation. Requires `--radix-accordion-content-height` or one of the [other accordion content height variables][Docs_Accordion_Content_Height] to be set to the content's height.           |
+| [`collapsible-down`][Docs_Collapsible] | Collapsible down animation. Requires `--radix-collapsible-content-height` or one of the [other collapsible content height variables][Docs_Collapsible_Content_Height] to be set to the content's height. |
+| [`collapsible-up`][Docs_Collapsible]   | Collapsible up animation. Requires `--radix-collapsible-content-height` or one of the [other collapsible content height variables][Docs_Collapsible_Content_Height] to be set to the content's height.   |
+| [`caret-blink`][Docs_Caret]            | Blinking animation for caret/cursor.                                                                                                                                                                     |
 
 #### Accordion and Collapsible Utilities
 
@@ -214,13 +219,16 @@ For the accordion and collapsible animations to work correctly, you need to set 
 [Docs_Running]: ./docs/parameters/animation-play-state.md#running
 [Docs_Paused]: ./docs/parameters/animation-play-state.md#paused
 [Docs_Play_State]: ./docs/parameters/animation-play-state.md#play-state-
+[Docs_Blur]: ./docs/transforms/blur.md
 [Docs_Fade]: ./docs/transforms/opacity.md
 [Docs_Zoom]: ./docs/transforms/scale.md
 [Docs_Spin]: ./docs/transforms/rotate.md
 [Docs_Slide]: ./docs/transforms/translate.md
 [Docs_Accordion]: ./docs/animations/accordion.md
+[Docs_Accordion_Content_Height]: ./docs/animations/accordion.md#setting-content-height
 [Docs_AccordionHeight]: ./docs/animations/accordion.md#accordion-h-
 [Docs_Collapsible]: ./docs/animations/collapsible.md
+[Docs_Collapsible_Content_Height]: ./docs/animations/collapsible.md#setting-content-height
 [Docs_CollapsibleHeight]: ./docs/animations/collapsible.md#collapsible-h-
 [Docs_Caret]: ./docs/animations/caret-blink.md
 [MDN_Duration]: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration

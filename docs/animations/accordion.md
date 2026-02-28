@@ -33,7 +33,13 @@ animation: accordion-down var(--tw-duration, 200ms) ease-out;
   to {
     height: var(
       --radix-accordion-content-height,
-      var(--bits-accordion-content-height, var(--reka-accordion-content-height, auto))
+      var(
+        --bits-accordion-content-height,
+        var(
+          --reka-accordion-content-height,
+          var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto))
+        )
+      )
     );
   }
 }
@@ -74,7 +80,13 @@ animation: accordion-up var(--tw-duration, 200ms) ease-out;
   from {
     height: var(
       --radix-accordion-content-height,
-      var(--bits-accordion-content-height, var(--reka-accordion-content-height, auto))
+      var(
+        --bits-accordion-content-height,
+        var(
+          --reka-accordion-content-height,
+          var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto))
+        )
+      )
     );
   }
   to {
@@ -147,8 +159,13 @@ This utility sets the height of the accordion content. It is used to ensure that
 
 ## Setting content height
 
-Until browser support for [`interpolate-size: allow-keywords`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the accordion content.
-The following sections explain how to set the height of the accordion content using different methods.
+Until browser support for [`interpolate-size: allow-keywords`][MDN_Interpolate_Size] is more widespread, a CSS variable is used to define the full height of the accordion content. You can set one of the following variables to the accordion content to set the height:
+
+- `--radix-accordion-content-height` as in the [Radix documentation][Radix_Docs]
+- `--bits-accordion-content-height` as in the [BitsUI documentation][Bits_Docs]
+- `--reka-accordion-content-height` as in the [Reka documentation][Reka_Docs]
+- `--kb-accordion-content-height` as in the [Kobalte documentation][Kobalte_Docs]
+- `--ngp-accordion-content-height` as in the [Angular Primitives documentation][Angular_Primitives_Docs]
 
 ### Using the `accordion-h-*` utility
 
@@ -158,13 +175,13 @@ You can use the `accordion-h-*` utility to set the height of the accordion conte
 <div class="accordion-h-(--abc-accordion-content-height)">...</div>
 ```
 
-### Using inline styles
+### HTML
 
 ```html
 <div style="--radix-accordion-content-height: 1.75em">...</div>
 ```
 
-### Using JavaScript
+### JavaScript
 
 ```js
 document
@@ -243,9 +260,51 @@ import {
 
 Learn more about Reka's accordion primitive in the [Reka documentation][Reka_Docs].
 
+### Using Kobalte (SolidJS)
+
+Kobalte automatically sets the `--kb-accordion-content-height` variable. Just use the headless accordion component primitive!
+
+```jsx
+import { Accordion } from "@kobalte/core/accordion";
+
+export default () => (
+  <Accordion.Root>
+    <Accordion.Item>
+      <Accordion.Header>
+        <Accordion.Trigger>...</Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Content>...</Accordion.Content>
+    </Accordion.Item>
+  </Accordion.Root>
+);
+```
+
+Learn more about Kobalte's accordion primitive in the [Kobalte documentation][Kobalte_Docs].
+
+### Using Angular Primitives (Angular)
+
+Angular Primitives automatically sets the `--ngp-accordion-content-height` variable. Just use the headless accordion component primitive!
+
+```jsx
+<div ngpAccordion ngpAccordionType="single" ngpAccordionCollapsible>
+  <div ngpAccordionItem ngpAccordionItemValue="...">
+    <h3>
+      <button ngpAccordionTrigger ngpButton>
+        ...
+      </button>
+    </h3>
+    <div ngpAccordionContent>...</div>
+  </div>
+</div>
+```
+
+Learn more about Angular Primitives' accordion primitive in the [Angular Primitives documentation][Angular_Primitives_Docs].
+
 <!-- Links -->
 
 [MDN_Interpolate_Size]: https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size
 [Radix_Docs]: https://radix-ui.com/docs/primitives/components/accordion#content
 [Bits_Docs]: https://bits-ui.com/docs/components/accordion#content
 [Reka_Docs]: https://reka-ui.com/docs/components/accordion#content
+[Kobalte_Docs]: https://kobalte.dev/docs/core/components/accordion#animating-content-size
+[Angular_Primitives_Docs]: https://angularprimitives.com/primitives/accordion#ngpaccordioncontent
