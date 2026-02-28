@@ -12,10 +12,12 @@ concurrency:
 
 permissions:
   id-token: write
+  contents: read
 
 jobs:
   publish:
     name: Publish
+    environment: release
     runs-on: ubuntu-latest
 
     steps:
