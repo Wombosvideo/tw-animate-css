@@ -5,109 +5,107 @@
  * @license MIT
  */
 
-:root {
-  /* @property declarations for animation variables, to prevent inheritance */
-  @property --tw-animation-delay {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0s;
-  }
+/* @property declarations for animation variables, to prevent inheritance */
+@property --tw-animation-delay {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0s;
+}
 
-  @property --tw-animation-direction {
-    syntax: "*";
-    inherits: false;
-    initial-value: normal;
-  }
+@property --tw-animation-direction {
+  syntax: "*";
+  inherits: false;
+  initial-value: normal;
+}
 
-  @property --tw-animation-duration {
-    syntax: "*";
-    inherits: false;
-    /* does not have an initial value in order for the `--tw-duration` variable to work */
-  }
+@property --tw-animation-duration {
+  syntax: "*";
+  inherits: false;
+  /* does not have an initial value in order for the `--tw-duration` variable to work */
+}
 
-  @property --tw-animation-fill-mode {
-    syntax: "*";
-    inherits: false;
-    initial-value: none;
-  }
+@property --tw-animation-fill-mode {
+  syntax: "*";
+  inherits: false;
+  initial-value: none;
+}
 
-  @property --tw-animation-iteration-count {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
+@property --tw-animation-iteration-count {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
 
-  @property --tw-enter-blur {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
+@property --tw-enter-blur {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 
-  @property --tw-enter-opacity {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
+@property --tw-enter-opacity {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
 
-  @property --tw-enter-rotate {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
+@property --tw-enter-rotate {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 
-  @property --tw-enter-scale {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
+@property --tw-enter-scale {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
 
-  @property --tw-enter-translate-x {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
+@property --tw-enter-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 
-  @property --tw-enter-translate-y {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
+@property --tw-enter-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 
-  @property --tw-exit-blur {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
+@property --tw-exit-blur {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 
-  @property --tw-exit-opacity {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
+@property --tw-exit-opacity {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
 
-  @property --tw-exit-rotate {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
+@property --tw-exit-rotate {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 
-  @property --tw-exit-scale {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
+@property --tw-exit-scale {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
 
-  @property --tw-exit-translate-x {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
+@property --tw-exit-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 
-  @property --tw-exit-translate-y {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
+@property --tw-exit-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
 }
 
 @theme inline {
@@ -212,8 +210,10 @@
         --radix-accordion-content-height,
         var(
           --bits-accordion-content-height,
-          var(--reka-accordion-content-height, 
-          var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto)))
+          var(
+            --reka-accordion-content-height,
+            var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto))
+          )
         )
       );
     }
@@ -225,8 +225,10 @@
         --radix-accordion-content-height,
         var(
           --bits-accordion-content-height,
-          var(--reka-accordion-content-height, 
-          var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto)))
+          var(
+            --reka-accordion-content-height,
+            var(--kb-accordion-content-height, var(--ngp-accordion-content-height, auto))
+          )
         )
       );
     }

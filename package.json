@@ -66,15 +66,13 @@
     "*": "prettier --write --ignore-unknown",
     "package.json": "sort-package-json"
   },
-  "prettier": {
-    "printWidth": 100
-  },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@types/node": "^24.5.2",
     "lint-staged": "^16.2.0",
-    "prettier": "^3.6.2",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
     "simple-git-hooks": "^2.13.1",
     "sort-package-json": "^3.4.0"
   },
