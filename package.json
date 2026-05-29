@@ -38,10 +38,12 @@
   "type": "module",
   "exports": {
     ".": {
-      "style": "./dist/tw-animate.css"
+      "style": "./dist/tw-animate.css",
+      "default": "./dist/tw-animate.css"
     },
     "./prefix": {
-      "style": "./dist/tw-animate-prefix.css"
+      "style": "./dist/tw-animate-prefix.css",
+      "default": "./dist/tw-animate-prefix.css"
     }
   },
   "main": "./dist/tw-animate.css",
