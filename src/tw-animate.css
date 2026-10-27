@@ -39,7 +39,6 @@
 @property --tw-enter-blur {
   syntax: "*";
   inherits: false;
-  initial-value: 0;
 }
 
 @property --tw-enter-opacity {
@@ -75,7 +74,6 @@
 @property --tw-exit-blur {
   syntax: "*";
   inherits: false;
-  initial-value: 0;
 }
 
 @property --tw-exit-opacity {
@@ -173,7 +171,7 @@
       transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0)
         scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1))
         rotate(var(--tw-enter-rotate, 0));
-      filter: blur(var(--tw-enter-blur, 0));
+      filter: blur(var(--tw-enter-blur));
     }
   }
 
@@ -183,7 +181,7 @@
       transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0)
         scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1))
         rotate(var(--tw-exit-rotate, 0));
-      filter: blur(var(--tw-exit-blur, 0));
+      filter: blur(var(--tw-exit-blur));
     }
   }
 
