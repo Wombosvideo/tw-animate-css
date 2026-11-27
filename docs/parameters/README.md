@@ -20,7 +20,7 @@ Parameter classes are used to modify the behavior of the animation classes. They
 [TailwindCSS_Easing]: https://tailwindcss.com/docs/transition-timing-function
 [TailwindCSS_Delay]: https://tailwindcss.com/docs/transition-delay
 [Docs_Duration]: ./animation-duration.md
-[Docs_Ease]: ./animation-easing.md
+[Docs_Ease]: ./animation-timing-function.md
 [Docs_Delay]: ./animation-delay.md
 [Docs_Repeat]: ./animation-iteration-count.md
 [Docs_Direction]: ./animation-direction.md
