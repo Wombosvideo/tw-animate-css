@@ -1,6 +1,6 @@
 # Enter/Exit Animations
 
-The following are base classes for enter and exit animations. You can use [parameters](../parameters/README.md) to customize things like duration, easing, and delay, or you can use [transformations](../transform/README.md) to specify the animations themselves.
+The following are base classes for enter and exit animations. You can use [parameters](../parameters/README.md) to customize things like duration, easing, and delay, or you can use [transformations](../transforms/README.md) to specify the animations themselves.
 
 ## `animate-in`
 
